@@ -53,7 +53,7 @@
       
       	// Create click handlers for the different tracks
       	$("#jp_container_song .track").click(function(e) {
-      		my_trackName.text($(this).text());
+      		my_trackName.text($(this).text() + ' by ' + $(this).attr("author"));
       		my_jPlayer.jPlayer("setMedia", {
       			mp3: $(this).attr("href")
       		});
