@@ -1,7 +1,7 @@
 .demo-container {
 	border: 1px solid #009BE3;
 	padding: 0 20px;
-	width:380px;
+	width:420px;
 	font-family: "Myriad Pro Regular", "Trebuchet MS";
 }
 
@@ -28,4 +28,8 @@
 
 .demo-container p span.track-name {
 	color: #CC0090;
+}
+
+div.jp-audio {
+	width:460px;
 }
