@@ -55,6 +55,11 @@
       	$("#jp_container_song .track").click(function(e) {
       		my_trackName.text($(this).text() + ' by ' + $(this).attr("author"));
       		$("#jp_container_1 .jp-title").text($(this).text() + ' by ' + $(this).attr("author"));
+      		var img_location = $(this).attr("img");
+      		if (!img_location) {
+      			img_location = "./img/princess.jpg";
+      		} 
+     		$("#jp_container_song img").attr('src', img_location).attr('width', '420px'); 
       		my_jPlayer.jPlayer("setMedia", {
       			mp3: $(this).attr("href")
       		});
