@@ -1,48 +1,55 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  </head>
-  <body>
-    ﻿
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>清华水利系北美系友通讯录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <!--  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index_files/screen.css" type="text/css" media="screen">
     <link rel="stylesheet" href="index_files/table.css" type="text/css" media="screen">
     -->
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+  </head>
 
+  <body>
     <div class="container">
       <div class="jumbotron">
         <h1> <strong><a href="http://178502.net/index.php">清华水利系北美系友通讯录</a></strong></h1>
           <a href="http://178502.net/index.php">首页</a> | <a href="http://178502.net/index.php?p=lookup">通讯录</a> | 
           <a href="http://178502.net/index.php?p=wechat_list">微信对照表</a> | <a href="http://178502.net/index.php?p=contactus">留言</a>
         <br>
+        <!--  
         <a href="http://178502.net/index.php?p=login">登陆</a> | <a href="http://178502.net/recover.php?mode=password">忘记密码</a>		
+        -->
       </div>
+
       <div class="row">
-        <div class="col-md-9">
-        <div class="alert alert-info" role="alert"><h1> <span class="glyphicon glyphicon glyphicon-qrcode"></span> <strong>激活请求</strong></h1></div>
-          <form action="activation_request.php" method="post">
-            <ul>
-              <li>
-                用户名*:<br>
-                <input name="username" placeholder="你的名字拼音,比如马小哈:maxiaoha" size="85" type="text">	
-              </li>
-              <li>
-                <input value="请发激活链接" type="submit">	
-              </li>
-            </ul>
-          </form>
-          <img src="index_files/wechat_17hs85.htm" width="300">
-          <br>
+        <div class="col-sm-9">
+          <div class="alert alert-info" role="alert"><h1> <span class="glyphicon glyphicon glyphicon-qrcode"></span> <strong>激活请求</strong></h1></div>
+          <div>
+          <form class="navbar-form navbar-left" action="activation_request.php" method="post">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">用户名</span>
+                <input type="text" class="form-control" placeholder="你的名字拼音,比如马小哈:maxiaoha" size="35" >
+              </div> 
+              
+            </div>
+            <button type="submit" class="btn btn-default">请发激活链接</button>
+	      </form>
+	      <br>
+	      <br>
+	      <br>
+
+          <img src="http://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Tsinghua_University_Logo.svg/284px-Tsinghua_University_Logo.svg.png" width="300px">
+	      <br>
+	      <br>
           从微信扫描此二维码进入清华水利系北美群<br><br>
+	    </div>
           <div class="alert alert-success" role="alert"><h1> <span class="glyphicon glyphicon-user">  <strong>找到组织啦!</strong>		</h1></div>
           <p> 亲爱的同学，欢迎你回到组织的怀抱! <br><br>
             本网站主要用于同学通讯录的查询，以及同学的通讯信息变动时的更新，成员皆为清华水利系北美的系友。本网站为封闭网站，不提供开放注册。
@@ -64,30 +71,30 @@
             第一天测试已发现关键BUG，并增加更新了些内容，非常感谢参与测试的同学们给出的意见和支持！
           </p>
         </div>
-        <div class="col-md-3">
-          <form action="login.php" method="post">
-            <ul id="login">
-              <li>	用户名:<br>
-                <input name="username" placeholder="username 拼音名" type="text">
-              </li>
-              <li>
-                密码:<br>
-                <input name="password" placeholder="password 第一次登录为拼音名" type="password">
-              </li>
-              <li>
-                <input name="rememberme" type="checkbox">Remember me <br>
-              </li>
-              <li>
-                <input name="last_page" value="" type="hidden">
-                <input value="进去转转" type="submit">
-              </li>
-              <li>
-                忘记 <a href="http://178502.net/recover.php?mode=password">密码</a> 
-              </li>
-            </ul>
-          </form>
+
+        <div class="col-sm-3">
+	       <form class="form-signin" role="form" action="login.php" method="post">
+        <h2 class="form-signin-heading">登陆</h2>
+                <div class="input-group">
+                <span class="input-group-addon">用户名</span>
+        		<input type="text" name="username" class="form-control" placeholder="username 拼音名" required autofocus>
+              </div> 
+                <div class="input-group">
+                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;密码 </span>
+        <input type="password" name="password" class="form-control" placeholder="password 第一次登录为拼音名" required>
+              </div> 
+        <label class="checkbox">
+          <input type="checkbox" name="rememberme"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">进去转转</button>
+      </form>
+      <br>
+       忘记 <a href="http://178502.net/recover.php?mode=password">密码</a> 
+	      
+          <br>
+          <br>
           <h3><strong>清华水利系北美系友群</strong></h3>
-          微信群 （created by ’84 李卫 6/7/2014)					<br><br>							
+                        微信群 <br><br>							
           <a href="http://groups.yahoo.com/group/hheoa/">Yahoo Group: HHOEA (hosted by Xin Wu)</a>		<br><br>
           <a href="http://www.linkedin.com/groups?gid=98903)">LinkedIn Group: TUOA (created by Xin Wu, now managed by Liu Wenxing)</a><br><br>									
           <a href="http://www.facebook.com/group.php?gid=131342443166&amp;ref=mf">Facebook Group THUAA</a>		<br><br>
@@ -117,5 +124,8 @@
     </footer>
       <br>
     </div>
+    
+    
   </body>
+
 </html>
