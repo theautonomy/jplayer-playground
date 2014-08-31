@@ -3,11 +3,8 @@
   <head>
     <title>清华水利系北美系友通讯录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
     <!--  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index_files/screen.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="index_files/table.css" type="text/css" media="screen">
     -->
 
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
@@ -19,8 +16,10 @@
     <div class="container">
       <div class="jumbotron">
         <h1> <strong><a href="http://178502.net/index.php">清华水利系北美系友通讯录</a></strong></h1>
+        <h2>
           <a href="http://178502.net/index.php">首页</a> | <a href="http://178502.net/index.php?p=lookup">通讯录</a> | 
           <a href="http://178502.net/index.php?p=wechat_list">微信对照表</a> | <a href="http://178502.net/index.php?p=contactus">留言</a>
+        </h2>
         <br>
         <!--  
         <a href="http://178502.net/index.php?p=login">登陆</a> | <a href="http://178502.net/recover.php?mode=password">忘记密码</a>		
@@ -29,7 +28,10 @@
 
       <div class="row">
         <div class="col-sm-9">
-          <div class="alert alert-info" role="alert"><h1> <span class="glyphicon glyphicon glyphicon-qrcode"></span> <strong>激活请求</strong></h1></div>
+        <!--  
+          <div class="alert alert-info" role="alert"><h2> <span class="glyphicon glyphicon glyphicon-qrcode"></span> <strong>激活请求</strong></h2></div>
+          -->
+          <div><h2> <span class="glyphicon glyphicon glyphicon-qrcode"></span> <strong>激活请求</strong></h2></div>
           <div>
           <form class="navbar-form navbar-left" action="activation_request.php" method="post">
             <div class="form-group">
@@ -50,7 +52,10 @@
 	      <br>
           从微信扫描此二维码进入清华水利系北美群<br><br>
 	    </div>
-          <div class="alert alert-success" role="alert"><h1> <span class="glyphicon glyphicon-user">  <strong>找到组织啦!</strong>		</h1></div>
+	    <!--  
+          <div class="alert alert-success" role="alert"><h2> <span class="glyphicon glyphicon-user">  <strong>找到组织啦!</strong>		</h2></div>
+          -->
+          <div><h2> <span class="glyphicon glyphicon-user">  <strong>找到组织啦!</strong>		</h2></div>
           <p> 亲爱的同学，欢迎你回到组织的怀抱! <br><br>
             本网站主要用于同学通讯录的查询，以及同学的通讯信息变动时的更新，成员皆为清华水利系北美的系友。本网站为封闭网站，不提供开放注册。
             同学们如有信息变动请及时登陆网站更新，这样我们每位同学就不会掉队，永远能找回大部队了！ <br><br>
@@ -58,7 +63,10 @@
             <br>同学上站后可以更改自己的信息，也可以选择哪些录入的信息可以公布或不显示，还可以选择不接受站内的通知邮件。
             <br><br>
           </p>
-          <div class="alert alert-warning" role="alert"> <h1> <span class="glyphicon glyphicon-warning-sign"> <strong>告示!</strong></h1></div>
+          <!--  
+          <div class="alert alert-warning" role="alert"> <h2> <span class="glyphicon glyphicon-warning-sign"> <strong>告示!</strong></h2></div>
+          -->
+          <div> <h2> <span class="glyphicon glyphicon-warning-sign"> <strong>告示!</strong></h2></div>
           <h2><strong>测试阶段。。。<br>
             大家现在修改的信息本站会做最大努力尽量保留，在测试调试过程中有可能会重设。谢谢支持！</strong>
           </h2>
@@ -73,20 +81,25 @@
         </div>
 
         <div class="col-sm-3">
-	       <form class="form-signin" role="form" action="login.php" method="post">
+        
+	    <form class="form-signin" role="form" action="login.php" method="post">
         <h2 class="form-signin-heading">登陆</h2>
-                <div class="input-group">
-                <span class="input-group-addon">用户名</span>
+        
+                <div class="form-group">
+                <span class="form-group-addon">用户名</span>
         		<input type="text" name="username" class="form-control" placeholder="username 拼音名" required autofocus>
               </div> 
-                <div class="input-group">
-                <span class="input-group-addon">&nbsp;&nbsp;&nbsp;密码 </span>
+                <div class="form-group">
+                <span class="form-group-addon">密码 </span>
         <input type="password" name="password" class="form-control" placeholder="password 第一次登录为拼音名" required>
               </div> 
+           <div class="checkbox">
         <label class="checkbox">
           <input type="checkbox" name="rememberme"> Remember me
         </label>
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">进去转转</button>
+
       </form>
       <br>
        忘记 <a href="http://178502.net/recover.php?mode=password">密码</a> 
