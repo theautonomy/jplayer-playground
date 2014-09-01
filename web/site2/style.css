@@ -15,6 +15,12 @@
 h1,h2,h3,h4,h5,h6{
 font-family: "Arimo", arial, verdana, sans-serif;
 font-weight:normal;
+color: green;
+//color: #266A2E;
+//color: #99cc99;
+//color: #003366;
+//color: #99cc99;
+//color: #4D99E0;
 }
 
 thead th,
@@ -156,4 +162,11 @@ display:block;
 
 .custom_bg {
 	background-image: url("img/tsinghua-bg4.jpg");
+}
+
+.font-color-1 {
+	color: green;
+	//color: #266A2E;
+	//color: #4D99E0;
+	//color: #99cc99;
 }
