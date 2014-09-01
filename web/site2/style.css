@@ -20,7 +20,7 @@ color: green;
 //color: #99cc99;
 //color: #003366;
 //color: #99cc99;
-//color: #4D99E0;
+color: #4D99E0;
 }
 
 thead th,
@@ -165,8 +165,8 @@ display:block;
 }
 
 .font-color-1 {
-	color: green;
+	//color: green;
 	//color: #266A2E;
-	//color: #4D99E0;
+	color: #4D99E0;
 	//color: #99cc99;
 }

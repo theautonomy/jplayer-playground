@@ -39,57 +39,44 @@
       <div class="col_12">
 
         <div class="col_9">
-          <i class="icon-qrcode icon-2x font-color-1"> 激活请求</i>
-          <form action="activation_request.php" method="post">
-            <label for="text_1">用户名</label>
-            <input type="text" name="text_1" name="username" placeholder="你的名字拼音,比如马小哈:maxiaoha" size="38" />
-            <button type="submit" class="medium blue"><i class="icon-qrcode"> </i>请发激活链接</button>
+         
+          <div class="col_4">
+          <form class="vertical" action="login.php" method="post">
+            <h4>登陆</h4>
+            <label for="text_2">用户名</label>
+            <input id="text_2" type="text" name="username" placeholder="username 拼音名" required>
+            <label for="text_3">密码 </label>
+            <input id="text_3" type="password" name="password"  placeholder="password 第一次登录为拼音名" required>
+            <input type="checkbox" id="check_1" name="rememberme"/> 
+            <label for="check_1" class="inline">Remember me</label>
+            <br>
+            <button type="submit" class="medium blue"><i class=" icon-signin"> </i>进去转转</button>
           </form>
-          <br>
-          <img src="http://jingyihotel.net/wp-content/uploads/2012/05/tsinghua.jpg" width="300px">	
-          <br>
-          <br>从微信扫描此二维码进入清华水利系北美群
-          <br>
-          <br>
-          <hr class="alt2" />
-          <i class="icon-user icon-2x font-color-1"> 找到组织啦!</i> 
-          <p> 亲爱的同学，欢迎你回到组织的怀抱! <br><br>
-            本网站主要用于同学通讯录的查询，以及同学的通讯信息变动时的更新，成员皆为清华水利系北美的系友。本网站为封闭网站，不提供开放注册。
-            同学们如有信息变动请及时登陆网站更新，这样我们每位同学就不会掉队，永远能找回大部队了！ <br><br>
-            登陆上站后即可查阅同学的联系信息，可以按年级查列表，也可以在URL直接输入 www.网站名/同学拼音名，例如要查找马小哈的信息，输入 www.网站名/maxiaoha 即可查询。也可以按现在所在地区查询。<br>
-            <br>同学上站后可以更改自己的信息，也可以选择哪些录入的信息可以公布或不显示，还可以选择不接受站内的通知邮件。
-            <br><br>
-          </p>
-          <hr class="alt2" />
-          <i class="icon-warning-sign icon-2x font-color-1"> 告示!</i> 
-          <h4><strong>测试阶段。。。<br>
-            大家现在修改的信息本站会做最大努力尽量保留，在测试调试过程中有可能会重设。谢谢支持！</strong>
-          </h4>
-          <p> 本网站2014年9月5日开通测试、每位第一次登陆的同学激活设置密码后即可浏览。以后如忘记密码，每次密码找回后第一次登陆也要先修改密码。<br><br>
-            各成员用户名为自己名字的汉语拼音，首次使用需要激活帐号。
-            测试期间，如有同学愿意加入测试，可以在上面表格发送激活请求，帐号激活链接会发送到成员的信箱里，成员点击链接即激活帐号，并继而设置登陆密码。<br><br>
-            在网站正式开通后，激活链接会通过邮件发个每位尚未参与测试的同学。<br><br>
-            请大家踊跃发现BUG，并提出改进意见。
-            <br><br>
-            第一天测试已发现关键BUG，并增加更新了些内容，非常感谢参与测试的同学们给出的意见和支持！
-          </p>
-        </div>
+          </div>
+          
+          <div class="col_5">
+          
+          </div>
+ 
+       </div>
 
         <div class="col_3">
         
           <img src="img/tsinghua-bg2.jpg"></img>
+          <!--  
           <form class="vertical" action="login.php" method="post">
             <h4>登陆</h4>
             <label for="text_2">用户名</label>
-            <input id="text_2" type="text" name="username" placeholder="username 拼音名"  required size="38" >
+            <input id="text_2" type="text" name="username" placeholder="username 拼音名"  class="col_2" >
             <label for="text_3">密码 </label>
-            <input id="text_3" type="password" name="password"  placeholder="password 第一次登录为拼音名" required  size="38" >
+            <input id="text_3" type="password" name="password"  placeholder="password 第一次登录为拼音名" required  class="col_2"  >
             <input type="checkbox" id="check_1" name="rememberme"/> 
             <label for="check_1" class="inline">Remember me</label>
             <br>
             <button type="submit" class="medium blue"><i class=" icon-signin"> </i>进去转转</button>
           </form>
           <hr class="alt2" />
+          -->
           <h4>北美系友信息</h4>
                          微信群 <br><br>							
           <a href="http://groups.yahoo.com/group/hheoa/">Yahoo Group: HHOEA (hosted by Xin Wu)</a>		<br><br>
