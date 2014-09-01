@@ -170,3 +170,18 @@ display:block;
 	color: #4D99E0;
 	//color: #99cc99;
 }
+
+/*
+table.custom_table_1 {
+table.custom_table_1 th tr td {
+table.custom_table_1, th.custom_table_1, tr.custom_table_1 {
+*/
+/*
+.custom_table_1 {
+		border: 1px dotted #4D99E0;
+}
+*/
+
+.custom_table_1 th, tr, td {
+		border: 1px dotted #4D99E0;
+}

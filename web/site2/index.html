@@ -24,7 +24,7 @@
         -->
         <h1 class="center">清华水利系北美系友通讯录</h1>
         <h5 class="center">
-          <a class="font-color-1" href="index.php">首页</a> | <a class="font-color-1" href="index.php?p=lookup">通讯录</a> | 
+          <a class="font-color-1" href="index.php">首页</a> | <a class="font-color-1" href="list.html">通讯录</a> | 
           <a class="font-color-1" href="index.php?p=wechat_list">微信对照表</a> | <a class="font-color-1" href="index.php?p=contactus">留言</a>
         </h5>
         <br>
@@ -33,18 +33,24 @@
         <br>
         <br>
         <br>
-
       </div>
 
       <div class="col_12">
-
         <div class="col_9">
           <i class="icon-qrcode icon-2x font-color-1"> 激活请求</i>
-          <form action="activation_request.php" method="post">
-            <label for="text_1">用户名</label>
-            <input type="text" name="text_1" name="username" placeholder="你的名字拼音,比如马小哈:maxiaoha" size="38" />
-            <button type="submit" class="medium blue"><i class="icon-qrcode"> </i>请发激活链接</button>
-          </form>
+          <br>
+          <br>
+          <div class="col_4">
+            <form class="vertical" action="activation_request.php" method="post">
+              <label for="text_1">用户名</label>
+              <input type="text" name="text_1" name="username" placeholder="你的名字拼音,比如马小哈:maxiaoha" class="col_2" size="38" />
+              <button type="submit" class="medium blue"><i class="icon-qrcode"> </i>请发激活链接</button>
+            </form>
+          </div>
+          <div class="col_5">
+            <br> <br> <br> <br> <br> <br> <br> <br>
+          </div>
+          <br>
           <br>
           <img src="http://jingyihotel.net/wp-content/uploads/2012/05/tsinghua.jpg" width="300px">	
           <br>
@@ -76,7 +82,6 @@
         </div>
 
         <div class="col_3">
-        
           <img src="img/tsinghua-bg2.jpg"></img>
           <form class="vertical" action="login.php" method="post">
             <h4>登陆</h4>
@@ -90,7 +95,7 @@
             <button type="submit" class="medium blue"><i class=" icon-signin"> </i>进去转转</button>
           </form>
           <hr class="alt2" />
-          <h4>北美系友信息</h4>
+          <h4>相关信息</h4>
                          微信群 <br><br>							
           <a href="http://groups.yahoo.com/group/hheoa/">Yahoo Group: HHOEA (hosted by Xin Wu)</a>		<br><br>
           <a href="http://www.linkedin.com/groups?gid=98903)">LinkedIn Group: TUOA (created by Xin Wu, now managed by Liu Wenxing)</a><br><br>									
@@ -157,7 +162,7 @@
     <!-- ===================================== START FOOTER ===================================== -->
     <div class="clear"></div>
     <div id="footer">
-      &copy; Copyright 2011–2012 All Rights Reserved. 
+      &copy; Copyright 2014 All Rights Reserved. 
     </div>
     <!-- END FOOTER -->
 
