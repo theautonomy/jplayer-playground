@@ -18,37 +18,37 @@
     
     <script type="text/javascript">
 
-    function thebackground() {
-    	$('div.background img').css({opacity: 0.0});
-    	$('div.background img:first').css({opacity: 1.0});
-    	setInterval('change()',5000);
-    	}
+        function change() {
+    		 var images = [];
+    	    images[0] ="img/1-13091314525K57.jpg";
+    	    images[1] ="img/tsinghua-bg1.jpg";
+    	    images[2] ="img/13O301J4Q0-11539.jpg";
+    	    images[3] ="img/tsinghua3.jpg";
+    	    images[4] ="img/2011812902415668.jpg";
+    	    images[5] ="img/tsinghua4.jpg";
+    	    images[6] ="img/f9f7fe69c3d447a390bde947217b5a53.jpg";
+    	    images[7] ="img/tsinghua5.jpg";
+    	    images[8] ="img/TsinghuaUniversitypic2.jpg";
+    	    images[9] ="img/20101226034110610904362.jpg";
 
-    	function change() {
-    		
-    	var current = ($('div.background img.show')? $('div.background img.show') : $('div.background img:first'));
-    	if ( current.length == 0 ) current = $('div.background img:first');
-    	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div.background img:first') :current.next()) : $('div.background img:first'));
-    	next.css({opacity: 0.0})
-    	.addClass('show')
-    	.animate({opacity: 1.0}, 1000);
-    	current.animate({opacity: 0.0}, 1000)
-    	.removeClass('show');
-    	
-    	/*
-    	  var imgsrc = $('.background img'),
-    	  
-    	  $imgrc.attr('src', 'img/2011812902415668.jpg"')
-    	  */
-    	  
+    		  var loop;
+    		  var i = 0;
+
+    		  var image = $('.background img');
+
+    		  loop = setInterval(function () {
+    		      if (i < images.length - 1) {
+    		          i++;
+    		          $(image).attr('src', images[i]);
+    		      } else {
+    		          i = 0;
+    		          $(image).attr('src', images[i]);
+    		      }
+    		  }, 10000);
     	};
 
     	$(document).ready(function() {
-    		/*
-    	thebackground();
-    	$('div.background').fadeIn(1000); // works for all the browsers other than IE
-    	$('div.background img').fadeIn(1000); // IE tweak
-    	*/
+    	    change();
     	});
 
 	</script>
@@ -89,7 +89,7 @@
 
       <div class="col_12">
         <div class="col_7 background">
-          <img src="img\1-13091314525K57.jpg"></img>
+          <img src="img\1-13091314525K57.jpg" style="width: 100%;max-height: 100%" ></img>
           <!--  
           <img src="img\13O301J4Q0-11539.jpg"></img>
           <img src="img\1-13091314525K57.jpg"></img>
