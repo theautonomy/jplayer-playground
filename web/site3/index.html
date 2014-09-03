@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>水木歌友中秋歌会</title>
+    <meta charset="UTF-8">
+    <!--  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      -->
+    <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="playlist.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>                                  
+    <script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script>
+    <script src="js/custom/jplayer-control.js"></script>
+    
+    
+    <script type="text/javascript">
+
+    function thebackground() {
+    	$('div.background img').css({opacity: 0.0});
+    	$('div.background img:first').css({opacity: 1.0});
+    	setInterval('change()',5000);
+    	}
+
+    	function change() {
+    		
+    	var current = ($('div.background img.show')? $('div.background img.show') : $('div.background img:first'));
+    	if ( current.length == 0 ) current = $('div.background img:first');
+    	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div.background img:first') :current.next()) : $('div.background img:first'));
+    	next.css({opacity: 0.0})
+    	.addClass('show')
+    	.animate({opacity: 1.0}, 1000);
+    	current.animate({opacity: 0.0}, 1000)
+    	.removeClass('show');
+    	
+    	/*
+    	  var imgsrc = $('.background img'),
+    	  
+    	  $imgrc.attr('src', 'img/2011812902415668.jpg"')
+    	  */
+    	  
+    	};
+
+    	$(document).ready(function() {
+    		/*
+    	thebackground();
+    	$('div.background').fadeIn(1000); // works for all the browsers other than IE
+    	$('div.background img').fadeIn(1000); // IE tweak
+    	*/
+    	});
+
+	</script>
+
+
+  </head>
+
+  <body>
+
+    <div id="jquery_jplayer_1"></div>
+
+    <!-- ===================================== START GRID ===================================== -->
+    <div class="grid">
+      <div class="custom_bg col_12 ">
+        <br>
+        <h1 class="center">水木歌友中秋歌会</h1>
+        <br>
+      </div>
+
+      <div class="col_12">
+        <div id="jp_container_1" class="demo-container">
+          <ul>
+            <li><a class="jp-play" href="#">Play</a></li>
+            <li><a class="jp-pause" href="#">Pause</a></li>
+            <li><a class="jp-stop" href="#">Stop</a></li>
+            <li> || </li>
+            <li><a class="" href="#">Volume: </a></li>
+            <li><a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+            <li> || </li>
+            <li><a class="" href="#">Position: </a></li>
+            <li><a class="jp-seek-bar" href="#">|&lt;----------&gt;|</a></li>
+            <li> || </li>
+            <li><a class="jp-repeat" href="#" title="repeat">Turn Repeat On</a></li>
+            <li><a class="jp-repeat-off" href="#" title="repeat off">Turn Repeat Off</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col_12">
+        <div class="col_7 background">
+          <img src="img\1-13091314525K57.jpg"></img>
+          <!--  
+          <img src="img\13O301J4Q0-11539.jpg"></img>
+          <img src="img\1-13091314525K57.jpg"></img>
+          <img src="img\2011812902415668.jpg"></img>
+          <img src="img\f9f7fe69c3d447a390bde947217b5a53.jpg"></img>
+          -->
+        </div>
+
+        <div class="col_5">
+          <div id="jp_container_song" class="demo-container">
+            <br>
+            <div id="jp_container_1" class="demo-container">
+              <p>
+                <span class="play-state"></span> :
+                <span class="track-name">nothing</span>
+                at <span class="extra-play-info"></span>
+                of <span class="jp-duration"></span>, which is
+                <span class="jp-current-time"></span>
+              </p>
+            </div>
+ 
+            <table cellspacing="5" cellpadding="5" class="default custom_table_1 font-color-1">
+              <tbody>
+                <tr >
+                  <td><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago</a></td>
+                </tr>
+                <tr>
+                  <td><a href="./mp3/12907629.mp3" author="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></td>
+                </tr>
+                <tr>
+                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END GRID -->
+    <!-- ===================================== START FOOTER ===================================== -->
+    <!--  
+    <div class="clear"></div>
+
+    <div id="footer">
+    </div>
+    -->
+    <!-- END FOOTER -->
+  </body>
+</html>
