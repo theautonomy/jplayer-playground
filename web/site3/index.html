@@ -43,9 +43,39 @@
     		      }
     		  }, 10000);
     	};
+    	
+    	function searchTable(input)
+    	{
+    		var table = $('#song_list_table');
+    		table.find('tr').each(function(index, row)
+    		{
+    			var cells = $(row).find('td');
+    			if(cells.length > 0)
+    			{
+    				var found = false;
+    				cells.each(function(index, td)
+    				{
+    					var regExp = new RegExp(input, 'i');
+    					if(regExp.test($(td).text()))
+    					{
+    						found = true;
+    						return false;
+    					}
+    				});
+    				if(found == true)$(row).show();else $(row).hide();
+    			}
+    		});
+    	}
 
     	$(document).ready(function() {
+
     	    change();
+    	    
+    	    $('#song_search').keyup(function()
+    	    {
+    	    	searchTable($(this).val());
+    	    });
+
     	});
 
 	</script>
@@ -102,10 +132,13 @@
           <div id="jp_container_song" class="demo-container">
             
             <br>
-            List of Songs:
+			<input type="text" id="song_search"/>
+			<label for="song_search">Search for songs </label>
             <br>
+            <br>
+            List of Songs:
  
-            <table class="default custom_table_1 font-color-1">
+            <table id="song_list_table" class="default custom_table_1 font-color-1">
               <tbody>
                 <tr >
                   <td><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago</a></td>
@@ -115,6 +148,9 @@
                 </tr>
                 <tr>
                   <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></td>
+                </tr>
+                <tr>
+                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
                 </tr>
               </tbody>
             </table>
