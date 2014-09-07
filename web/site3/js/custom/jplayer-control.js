@@ -68,6 +68,7 @@ $(document).ready(function() {
       		}
       		first_track = false;
       		$(this).blur();
+      		$('html, body').animate({ scrollTop: 0 }, 'slow');
       		return false;
       	});
       
