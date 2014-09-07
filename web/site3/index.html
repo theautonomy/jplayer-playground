@@ -19,16 +19,16 @@
 
         function change() {
     		var images = [];
-    	    images[0] ="img/1-13091314525K57.jpg";
-    	    images[1] ="img/tsinghua-bg1.jpg";
-    	    images[2] ="img/13O301J4Q0-11539.jpg";
-    	    images[3] ="img/tsinghua3.jpg";
-    	    images[4] ="img/2011812902415668.jpg";
-    	    images[5] ="img/tsinghua4.jpg";
-    	    images[6] ="img/f9f7fe69c3d447a390bde947217b5a53.jpg";
-    	    images[7] ="img/tsinghua5.jpg";
-    	    images[8] ="img/TsinghuaUniversitypic2.jpg";
-    	    images[9] ="img/20101226034110610904362.jpg";
+    	    images[0] = "img/1-13091314525K57.jpg";
+    	    images[1] = "img/tsinghua-bg1.jpg";
+    	    images[2] = "img/13O301J4Q0-11539.jpg";
+    	    images[3] = "img/tsinghua3.jpg";
+    	    images[4] = "img/2011812902415668.jpg";
+    	    images[5] = "img/tsinghua4.jpg";
+    	    images[6] = "img/f9f7fe69c3d447a390bde947217b5a53.jpg";
+    	    images[7] = "img/tsinghua5.jpg";
+    	    images[8] = "img/TsinghuaUniversitypic2.jpg";
+    	    images[9] = "img/20101226034110610904362.jpg";
 
     		var i = 0;
     		var image = $('.background img');
@@ -50,13 +50,18 @@
     		table.find('tr').each(function(index, row)
     		{
     			var cells = $(row).find('td');
+    			
     			if(cells.length > 0)
     			{
     				var found = false;
     				cells.each(function(index, td)
     				{
     					var regExp = new RegExp(input, 'i');
-    					if(regExp.test($(td).text()))
+    					
+    					//var ahref = jQuery.parseHTML(${td}.html());
+
+    					if(regExp.test($(td).text()) || regExp.test($(td).html()))
+    					//if(regExp.test($(td).text()) || regExp.test(ahref.attr("author")))
     					{
     						found = true;
     						return false;
