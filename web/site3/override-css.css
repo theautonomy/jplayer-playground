@@ -1,0 +1,13 @@
+div.jp-audio ul.jp-controls {
+    width: 880px;
+    padding: 20px 20px 0px;
+}
+
+
+a {
+	-moz-transition: -moz-box-shadow 0.0s, border 0.0s, background 0.0s;
+	-webkit-transition: -webkit-box-shadow 0.0s, border 0.0s, background 0.0s;
+	-o-transition:  box-shadow 0.0s, border 0.0s, background 0.0s;
+	transition: box-shadow 0.0s, border 0.0s, background 0.0s;
+}
+	
