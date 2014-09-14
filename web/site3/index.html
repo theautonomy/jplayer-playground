@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>水木歌友中秋歌会</title>
     <meta charset="UTF-8">
@@ -10,214 +9,218 @@
     <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
     <link rel="stylesheet" type="text/css" href="style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="playlist.css">
+    <!--  
+      <link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
+      -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/kickstart.js"></script>                                  
     <script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script>
     <script src="js/custom/jplayer-control.js"></script>
     
-    <script type="text/javascript">
+    <script type = "text/javascript" > 
+    
+	    function change_image() {
+		    var images = [];
+		
+		    images[0] = "img/1-13091314525K57.jpg";
+		    images[1] = "img/tsinghua-bg1.jpg";
+		    images[2] = "img/13O301J4Q0-11539.jpg";
+		    images[3] = "img/tsinghua3.jpg";
+		    images[4] = "img/2011812902415668.jpg";
+		    images[5] = "img/tsinghua4.jpg";
+		    images[6] = "img/f9f7fe69c3d447a390bde947217b5a53.jpg";
+		    images[7] = "img/tsinghua5.jpg";
+		    images[8] = "img/TsinghuaUniversitypic2.jpg";
+		    images[9] = "img/20101226034110610904362.jpg";
+		
+		    var i = 0;
+		    var image = $('.img_background img');
+		
+		    setInterval(function () {
+		        if (i < images.length - 1) {
+		            i++;
+		            $(image).attr('src', images[i]);
+		            $(image).css('width', 'initial');
+		            $(image).css('height', 'initial');
+		            setSize();
+		        } else {
+		            i = 0;
+		            $(image).attr('src', images[i]);
+		            $(image).css('width', 'initial');
+		            $(image).css('height', 'initial');
+		            setSize();
+		        }
+		    }, 10000);
+		};
+		
+		function setSize() {
+		    var image = $('.img_background img');
+		    var imageWidth = $(image).width(); 
+		    var imageHeight = $(image).height(); 
+		    var ratio = imageWidth / imageHeight;
+		
+		    var newHeight = 480;
+		    var newWidth = newHeight * ratio;
+		
+		    if (newWidth > 640) {
+		        newWidth = 640;
+		        newHeight = newWidth / ratio;
+		    }
+		
+		    $(image).css('width', newWidth);
+		    $(image).css('height', newHeight);
+		}
+		
+		function searchTable(input) {
+		    var table = $('#song_list_table');
+		    table.find('tr').each(function (index, row) {
+		        var cells = $(row).find('td');
+		        if (cells.length > 0) {
+		            var found = false;
+		            cells.each(function (index, td) {
+		                var regExp = new RegExp(input, 'i');
+		                if (regExp.test($(td).text()) || regExp.test($(td).html())) {
+		                    found = true;
+		                    return false;
+		                }
+		            });
+		            if (found == true) $(row).show();
+		            else $(row).hide();
+		        }
+		    });
+		}
+		
+		$(document).ready(function () {
+		    change_image();
+		    $('#song_search').keyup(function () {
+		        searchTable($(this).val());
+		    });
+		});
 
-        function change() {
-    		var images = [];
-    	    images[0] = "img/1-13091314525K57.jpg";
-    	    images[1] = "img/tsinghua-bg1.jpg";
-    	    images[2] = "img/13O301J4Q0-11539.jpg";
-    	    images[3] = "img/tsinghua3.jpg";
-    	    images[4] = "img/2011812902415668.jpg";
-    	    images[5] = "img/tsinghua4.jpg";
-    	    images[6] = "img/f9f7fe69c3d447a390bde947217b5a53.jpg";
-    	    images[7] = "img/tsinghua5.jpg";
-    	    images[8] = "img/TsinghuaUniversitypic2.jpg";
-    	    images[9] = "img/20101226034110610904362.jpg";
-
-    		var i = 0;
-    		var image = $('.background img');
-
-    		setInterval(function () {
-    		      if (i < images.length - 1) {
-    		          i++;
-    		          $(image).attr('src', images[i]);
-    		      } else {
-    		          i = 0;
-    		          $(image).attr('src', images[i]);
-    		      }
-    		  }, 10000);
-    	};
-    	
-    	function searchTable(input)
-    	{
-    		var table = $('#song_list_table');
-    		table.find('tr').each(function(index, row)
-    		{
-    			var cells = $(row).find('td');
-    			
-    			if(cells.length > 0)
-    			{
-    				var found = false;
-    				cells.each(function(index, td)
-    				{
-    					var regExp = new RegExp(input, 'i');
-    					
-    					//var ahref = jQuery.parseHTML(${td}.html());
-
-    					if(regExp.test($(td).text()) || regExp.test($(td).html()))
-    					//if(regExp.test($(td).text()) || regExp.test(ahref.attr("author")))
-    					{
-    						found = true;
-    						return false;
-    					}
-    				});
-    				if(found == true)$(row).show();else $(row).hide();
-    			}
-    		});
-    	}
-
-    	$(document).ready(function() {
-
-    	    change();
-    	    
-    	    $('#song_search').keyup(function()
-    	    {
-    	    	searchTable($(this).val());
-    	    });
-
-    	});
-
-	</script>
+  </script>
 
   </head>
-
   <body>
-  
-  <div class="callout  clearfix">
-    <br>
-    <h1 class="center">水木歌友中秋歌会</h1>
-    <br>
-  </div>
-
+    <div class="callout  clearfix">
+      <br>
+      <h1 class="center">水木歌友中秋歌会</h1>
+      <br>
+    </div>
     <div id="jquery_jplayer_1"></div>
-
     <!-- ===================================== START GRID ===================================== -->
     <div class="grid">
-  
       <br>
       <div class="col_12">
         <div id="jp_container_1" class="demo-container" align="center">
-         <br>
-            <a class="jp-play" href="#">Play</a>
-            <a class="jp-pause" href="#">Pause</a>
-            <a class="jp-stop" href="#">Stop</a>
-             ||
-            <a class="" href="#">Volume: </a>
-            <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a>
-             || 
-            <a class="" href="#">Position: </a>
-            <a class="jp-seek-bar" href="#">|&lt;----------&gt;|</a>
-             || 
-            <a class="jp-repeat" href="#" title="repeat">Turn Repeat On</a>
-            <a class="jp-repeat-off" href="#" title="repeat off">Turn Repeat Off</a>
           <br>
-           <p>
-                <span class="play-state"></span> :
-                <span class="track-name">nothing</span>
-                at <span class="extra-play-info"></span>
-                of <span class="jp-duration"></span>, which is
-                <span class="jp-current-time"></span>
-              </p>
+          <a class="jp-play" href="#">Play</a>
+          <a class="jp-pause" href="#">Pause</a>
+          <a class="jp-stop" href="#">Stop</a>
+          ||
+          <a class="" href="#">Volume: </a>
+          <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a>
+          || 
+          <a class="" href="#">Position: </a>
+          <a class="jp-seek-bar" href="#">|&lt;----------&gt;|</a>
+          || 
+          <a class="jp-repeat" href="#" title="repeat">Turn Repeat On</a>
+          <a class="jp-repeat-off" href="#" title="repeat off">Turn Repeat Off</a>
+          <br>
+          <p>
+            <span class="play-state"></span> :
+            <span class="track-name">nothing</span>
+            at <span class="extra-play-info"></span>
+            of <span class="jp-duration"></span>, which is
+            <span class="jp-current-time"></span>
+          </p>
           <br>
         </div>
       </div>
-
       <div class="col_12">
-        <div class="col_7 background">
-          <img src="img/1-13091314525K57.jpg" style="width: 100%;max-height: 100%" ></img>
+        <div class="col_7 img_background">
+          <img src="img/1-13091314525K57.jpg"></img> 
         </div>
-
         <div class="col_5">
           <div id="jp_container_song" class="demo-container">
-            
-            <br>
-			<input type="text" id="song_search"/>
-			<label for="song_search">Search for songs </label>
-            <br>
-            <br>
-            List of Songs:
- 
-            <table id="song_list_table" class="default custom_table_1 font-color-1">
-              <tbody>
-                <tr >
-                  <td><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/12907629.mp3" author="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-                <tr>
-                  <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌手</a></td>
-                </tr>
-              </tbody>
-            </table>
+            <div style="overflow-y: scroll; height:480px;">
+              <br>
+              <input type="text" id="song_search"/>
+              <label for="song_search">Search for songs </label>
+              <br>
+              <br>
+              <table id="song_list_table" class="default custom_table_1 font-color-1">
+                <tbody>
+                  <tr >
+                    <td><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/12907629.mp3" author="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
     <!-- END GRID -->
+
     <!-- ===================================== START FOOTER ===================================== -->
     <div class="clear"></div>
-
     <br>
     <br>
     <br>
     <br>
-    
     <div id="footer">
-    	  All songs are &copy; copyright by their singers 
+      All songs are &copy; copyright by their singers 
     </div>
     <!-- END FOOTER -->
   </body>
