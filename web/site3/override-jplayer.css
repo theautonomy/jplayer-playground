@@ -40,4 +40,9 @@ div.jp-audio div.jp-type-single a.jp-mute, div.jp-audio div.jp-type-single a.jp-
     margin-left: 370px;
 }
 
+.my_list li {
+    float: none;
+    //margin-right: 1em;
+}
+
 	
