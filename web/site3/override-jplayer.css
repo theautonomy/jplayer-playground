@@ -12,11 +12,11 @@ a {
 }
 
 li.first_li {
-	padding: 5px 130px;
+	padding: 5px 30px;
 }
 
 div.jp-audio div.jp-type-single div.jp-progress {
-    left: 375px;
+    left: 175px;
     width: 350px;
 }
 
@@ -28,11 +28,11 @@ div.jp-audio div.jp-progress {
 
 div.jp-audio div.jp-volume-bar {
     top: 41px;
-    left: 753px;
+    left: 553px;
 }
 
 div.jp-audio div.jp-type-single div.jp-time-holder {
-    left: 373px;
+    left: 175px;
     width: 350px;
 }
 
