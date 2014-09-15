@@ -1,0 +1,43 @@
+div.jp-audio ul.jp-controls {
+    width: 1000px;
+    padding: 20px 20px 0px;
+}
+
+
+a {
+	-moz-transition: -moz-box-shadow 0.0s, border 0.0s, background 0.0s;
+	-webkit-transition: -webkit-box-shadow 0.0s, border 0.0s, background 0.0s;
+	-o-transition:  box-shadow 0.0s, border 0.0s, background 0.0s;
+	transition: box-shadow 0.0s, border 0.0s, background 0.0s;
+}
+
+li.first_li {
+	padding: 5px 130px;
+}
+
+div.jp-audio div.jp-type-single div.jp-progress {
+    left: 375px;
+    width: 350px;
+}
+
+div.jp-audio div.jp-progress {
+    //position: absolute;
+    top: 37px;
+    //height: 15px;
+}
+
+div.jp-audio div.jp-volume-bar {
+    top: 41px;
+    left: 753px;
+}
+
+div.jp-audio div.jp-type-single div.jp-time-holder {
+    left: 373px;
+    width: 350px;
+}
+
+div.jp-audio div.jp-type-single a.jp-mute, div.jp-audio div.jp-type-single a.jp-unmute {
+    margin-left: 370px;
+}
+
+	
