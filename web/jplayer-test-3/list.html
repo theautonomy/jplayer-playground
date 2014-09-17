@@ -1,105 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset=utf-8 />
-
-<title>Demo : The jPlayerPlaylist Object</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-<link href="css/jPlayer.css" rel="stylesheet" type="text/css" />
-<link href="css/prettify-jPlayer.css" rel="stylesheet" type="text/css" />
-
-<link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
-
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="js/jquery.jplayer.inspector.js"></script>
-<script type="text/javascript" src="js/themeswitcher.js"></script>
-<script type="text/javascript" src="js/custom/jplayer-control.js"></script>
-
-<script type="text/javascript">
-//<![CDATA[
-//]]>
-</script>
-
-</head>
-<!--  
-<body class="demo" onload="prettyPrint();">
--->
-
-<body>
-<div id="container">
-
-	<div id="content_main">
-
-		<div id="jp_container_N" class="jp-video jp-video-270p">
-			<div class="jp-type-playlist">
-				<div id="jquery_jplayer_N" class="jp-jplayer"></div>
-				<div class="jp-gui">
-					<div class="jp-video-play">
-						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
-					</div>
-					<div class="jp-interface">
-						<div class="jp-progress">
-							<div class="jp-seek-bar">
-								<div class="jp-play-bar"></div>
-							</div>
-						</div>
-						<div class="jp-current-time"></div>
-						<div class="jp-duration"></div>
-						<div class="jp-details">
-							<ul>
-								<li><span class="jp-title"></span></li>
-							</ul>
-						</div>
-						<div class="jp-controls-holder">
-							<ul class="jp-controls">
-								<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-								<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-							</ul>
-							<div class="jp-volume-bar">
-								<div class="jp-volume-bar-value"></div>
-							</div>
-							<ul class="jp-toggles">
-								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
-								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
-								<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
-								<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
-								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="jp-playlist">
-					<ul>
-						<li></li>
-					</ul>
-				</div>
-
-			</div>
-		</div>
-		
-	<div id="jp_container_song"> 
-        <span>Select a song : </span>
-        <ul>
-        <li><a href="#" song="./mp3/7912388.mp3"  artist="malumiqi" img="./img/snowwhite.jpg" class="track">Long Long Ago</a></li>
-        <li><a href="#" song="./mp3/12907629.mp3" artist="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></li>
-        <li><a href="#" song="./mp3/254817452.mp3" artist="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></li>
-        <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" img="./img/jasmine.jpg" class="track">Lismore</a></li>
-        <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3" class="track">The Separation</a></li>
-      </ul>
+  <head>
+    <meta charset=utf-8 />
+    <title>Demo : The jPlayerPlaylist Object</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="css/jPlayer.css" rel="stylesheet" type="text/css" />
+    <link href="css/prettify-jPlayer.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.inspector.js"></script>
+    <script type="text/javascript" src="js/themeswitcher.js"></script>
+    <script type="text/javascript" src="js/custom/jplayer-control.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      //]]>
+    </script>
+  </head>
+  <!--  
+    <body class="demo" onload="prettyPrint();">
+    -->
+  <body>
+    <div id="container">
+      <div id="content_main">
+        <div id="jp_container_N" class="jp-video jp-video-270p">
+          <div class="jp-type-playlist">
+            <div id="jquery_jplayer_N" class="jp-jplayer"></div>
+            <div class="jp-gui">
+              <div class="jp-video-play">
+                <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+              </div>
+              <div class="jp-interface">
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
+                </div>
+                <div class="jp-current-time"></div>
+                <div class="jp-duration"></div>
+                <div class="jp-details">
+                  <ul>
+                    <li><span class="jp-title"></span></li>
+                  </ul>
+                </div>
+                <div class="jp-controls-holder">
+                  <ul class="jp-controls">
+                    <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                    <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                    <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                    <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                    <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                  </ul>
+                  <div class="jp-volume-bar">
+                    <div class="jp-volume-bar-value"></div>
+                  </div>
+                  <ul class="jp-toggles">
+                    <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+                    <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+                    <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                    <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="jp-playlist">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="jp_container_song">
+          <span>Select a song : </span>
+          <ul>
+            <li><a href="#" song="./mp3/7912388.mp3"  artist="malumiqi" img="./img/snowwhite.jpg" class="track">Long Long Ago</a></li>
+            <li><a href="#" song="./mp3/12907629.mp3" artist="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></li>
+            <li><a href="#" song="./mp3/254817452.mp3" artist="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></li>
+            <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" img="./img/jasmine.jpg" class="track">Lismore</a></li>
+            <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3" class="track">The Separation</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-	</div>
-</div>
-</body>
-
+  </body>
 </html>
