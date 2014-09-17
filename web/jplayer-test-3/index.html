@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+
+<title>Demo : The jPlayerPlaylist Object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link href="css/jPlayer.css" rel="stylesheet" type="text/css" />
+<link href="css/prettify-jPlayer.css" rel="stylesheet" type="text/css" />
+
+<!-- 
+<link type="text/css" href="http://jplayer.org/latest/skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet" />
+-->
+<link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="js/jquery.jplayer.inspector.js"></script>
+<script type="text/javascript" src="js/themeswitcher.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	var myPlaylist = new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_N",
+		cssSelectorAncestor: "#jp_container_N"
+	}, [
+		{
+			title:"Cro Magnon Man",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		}
+	], {
+		playlistOptions: {
+			enableRemoveControls: true
+		},
+		swfPath: "../js",
+		supplied: "webmv, ogv, m4v, oga, mp3",
+		smoothPlayBar: true,
+		keyEnabled: true,
+		audioFullScreen: true
+	});
+
+	// Click handlers for jPlayerPlaylist method demo
+
+	// Audio mix playlist
+
+	$("#playlist-setPlaylist-audio-mix").click(function() {
+		myPlaylist.setPlaylist([
+			{
+				title:"Cro Magnon Man",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Your Face",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Hidden",
+				artist:"Miaow",
+				free: true,
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			},
+			{
+				title:"Cyber Sonnet",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Tempered Song",
+				artist:"Miaow",
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			},
+			{
+				title:"Lentement",
+				artist:"Miaow",
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			}
+		]);
+	});
+
+	// Video mix playlist
+
+	$("#playlist-setPlaylist-video-mix").click(function() {
+		myPlaylist.setPlaylist([
+			{
+				title:"Big Buck Bunny Trailer",
+				artist:"Blender Foundation",
+				m4v:"http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+				ogv:"http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+				poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+			},
+			{
+				title:"Finding Nemo Teaser",
+				artist:"Pixar",
+				m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
+				ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
+				poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+			},
+			{
+				title:"Incredibles Teaser",
+				artist:"Pixar",
+				m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+				ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+				poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+			}
+		]);
+	});
+
+	// Media mix playlist
+
+	$("#playlist-setPlaylist-media-mix").click(function() {
+		myPlaylist.setPlaylist([
+			{
+				title:"Cro Magnon Man",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Your Face",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Hidden",
+				artist:"Miaow",
+				free: true,
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			},
+			{
+				title:"Big Buck Bunny Trailer",
+				artist:"Blender Foundation",
+				m4v:"http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+				ogv:"http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+				poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+			},
+			{
+				title:"Finding Nemo Teaser",
+				artist:"Pixar",
+				m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
+				ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
+				poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+			},
+			{
+				title:"Cyber Sonnet",
+				artist:"The Stark Palace",
+				mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg",
+				poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+			},
+			{
+				title:"Incredibles Teaser",
+				artist:"Pixar",
+				m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+				ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+				webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+				poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+			},
+			{
+				title:"Tempered Song",
+				artist:"Miaow",
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			},
+			{
+				title:"Lentement",
+				artist:"Miaow",
+				mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg",
+				poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+			}
+		]);
+	});
+
+	// Miaow tracks
+
+	$("#playlist-add-bubble").click(function() {
+		myPlaylist.add({
+			title:"Bubble",
+			artist:"Miaow",
+			free:true,
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
+			poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+		});
+	});
+
+	$("#playlist-add-hidden").click(function() {
+		myPlaylist.add({
+			title:"Hidden",
+			artist:"Miaow",
+			free: true,
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
+			poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+		});
+	});
+
+	$("#playlist-add-tempered-song").click(function() {
+		myPlaylist.add({
+			title:"Tempered Song",
+			artist:"Miaow",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+			poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+		});
+	});
+
+	$("#playlist-add-lentement").click(function() {
+		myPlaylist.add({
+			title:"Lentement",
+			artist:"Miaow",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg",
+			poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+		});
+	});
+
+	// The Stark Palace tracks
+
+	$("#playlist-add-cro-magnon-man").click(function() {
+		myPlaylist.add({
+			title:"Cro Magnon Man",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		});
+	});
+
+	$("#playlist-add-your-face").click(function() {
+		myPlaylist.add({
+			title:"Your Face",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		});
+	});
+
+	$("#playlist-add-cyber-sonnet").click(function() {
+		myPlaylist.add({
+			title:"Cyber Sonnet",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		});
+	});
+
+	// Videos
+
+	$("#playlist-add-big-buck-bunny").click(function() {
+		myPlaylist.add({
+			title:"Big Buck Bunny Trailer",
+			artist:"Blender Foundation",
+			m4v:"http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+			ogv:"http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+			poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+		});
+	});
+
+	$("#playlist-add-finding-nemo").click(function() {
+		myPlaylist.add({
+			title:"Finding Nemo Teaser",
+			artist:"Pixar",
+			m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
+			poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+		});
+	});
+
+	$("#playlist-add-incredibles").click(function() {
+		myPlaylist.add({
+			title:"Incredibles Teaser",
+			artist:"Pixar",
+			m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+			poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+		});
+	});
+
+	// The remove commands
+
+	$("#playlist-remove").click(function() {
+		myPlaylist.remove();
+	});
+
+	$("#playlist-remove--2").click(function() {
+		myPlaylist.remove(-2);
+	});
+	$("#playlist-remove--1").click(function() {
+		myPlaylist.remove(-1);
+	});
+	$("#playlist-remove-0").click(function() {
+		myPlaylist.remove(0);
+	});
+	$("#playlist-remove-1").click(function() {
+		myPlaylist.remove(1);
+	});
+	$("#playlist-remove-2").click(function() {
+		myPlaylist.remove(2);
+	});
+
+	// The shuffle commands
+
+	$("#playlist-shuffle").click(function() {
+		myPlaylist.shuffle();
+	});
+
+	$("#playlist-shuffle-false").click(function() {
+		myPlaylist.shuffle(false);
+	});
+	$("#playlist-shuffle-true").click(function() {
+		myPlaylist.shuffle(true);
+	});
+
+	// The select commands
+
+	$("#playlist-select--2").click(function() {
+		myPlaylist.select(-2);
+	});
+	$("#playlist-select--1").click(function() {
+		myPlaylist.select(-1);
+	});
+	$("#playlist-select-0").click(function() {
+		myPlaylist.select(0);
+	});
+	$("#playlist-select-1").click(function() {
+		myPlaylist.select(1);
+	});
+	$("#playlist-select-2").click(function() {
+		myPlaylist.select(2);
+	});
+
+	// The next/previous commands
+
+	$("#playlist-next").click(function() {
+		myPlaylist.next();
+	});
+	$("#playlist-previous").click(function() {
+		myPlaylist.previous();
+	});
+
+	// The play commands
+
+	$("#playlist-play").click(function() {
+		myPlaylist.play();
+	});
+
+	$("#playlist-play--2").click(function() {
+		myPlaylist.play(-2);
+	});
+	$("#playlist-play--1").click(function() {
+		myPlaylist.play(-1);
+	});
+	$("#playlist-play-0").click(function() {
+		myPlaylist.play(0);
+	});
+	$("#playlist-play-1").click(function() {
+		myPlaylist.play(1);
+	});
+	$("#playlist-play-2").click(function() {
+		myPlaylist.play(2);
+	});
+
+	// The pause command
+
+	$("#playlist-pause").click(function() {
+		myPlaylist.pause();
+	});
+
+	// Changing the playlist options
+
+	// Option: autoPlay
+
+	$("#playlist-option-autoPlay-true").click(function() {
+		myPlaylist.option("autoPlay", true);
+	});
+	$("#playlist-option-autoPlay-false").click(function() {
+		myPlaylist.option("autoPlay", false);
+	});
+
+	// Option: enableRemoveControls
+
+	$("#playlist-option-enableRemoveControls-true").click(function() {
+		myPlaylist.option("enableRemoveControls", true);
+	});
+	$("#playlist-option-enableRemoveControls-false").click(function() {
+		myPlaylist.option("enableRemoveControls", false);
+	});
+
+	// Option: displayTime
+
+	$("#playlist-option-displayTime-0").click(function() {
+		myPlaylist.option("displayTime", 0);
+	});
+	$("#playlist-option-displayTime-fast").click(function() {
+		myPlaylist.option("displayTime", "fast");
+	});
+	$("#playlist-option-displayTime-slow").click(function() {
+		myPlaylist.option("displayTime", "slow");
+	});
+	$("#playlist-option-displayTime-2000").click(function() {
+		myPlaylist.option("displayTime", 2000);
+	});
+
+	// Option: addTime
+
+	$("#playlist-option-addTime-0").click(function() {
+		myPlaylist.option("addTime", 0);
+	});
+	$("#playlist-option-addTime-fast").click(function() {
+		myPlaylist.option("addTime", "fast");
+	});
+	$("#playlist-option-addTime-slow").click(function() {
+		myPlaylist.option("addTime", "slow");
+	});
+	$("#playlist-option-addTime-2000").click(function() {
+		myPlaylist.option("addTime", 2000);
+	});
+
+	// Option: removeTime
+
+	$("#playlist-option-removeTime-0").click(function() {
+		myPlaylist.option("removeTime", 0);
+	});
+	$("#playlist-option-removeTime-fast").click(function() {
+		myPlaylist.option("removeTime", "fast");
+	});
+	$("#playlist-option-removeTime-slow").click(function() {
+		myPlaylist.option("removeTime", "slow");
+	});
+	$("#playlist-option-removeTime-2000").click(function() {
+		myPlaylist.option("removeTime", 2000);
+	});
+
+	// Option: shuffleTime
+
+	$("#playlist-option-shuffleTime-0").click(function() {
+		myPlaylist.option("shuffleTime", 0);
+	});
+	$("#playlist-option-shuffleTime-fast").click(function() {
+		myPlaylist.option("shuffleTime", "fast");
+	});
+	$("#playlist-option-shuffleTime-slow").click(function() {
+		myPlaylist.option("shuffleTime", "slow");
+	});
+	$("#playlist-option-shuffleTime-2000").click(function() {
+		myPlaylist.option("shuffleTime", 2000);
+	});
+
+	// Equivalent commands
+
+	$("#playlist-equivalent-1-a").click(function() {
+		myPlaylist.add({
+			title:"Your Face",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		}, true);
+	});
+
+	$("#playlist-equivalent-1-b").click(function() {
+		myPlaylist.add({
+			title:"Your Face",
+			artist:"The Stark Palace",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+			poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+		});
+		myPlaylist.play(-1);
+	});
+
+	// AVOID COMMANDS
+
+	$("#playlist-avoid-1").click(function() {
+		myPlaylist.remove(2); // Removes the 3rd item
+		myPlaylist.remove(3); // Ignored unless removeTime=0: Where it removes the 4th item, which was originally the 5th item.
+	});
+
+
+
+	$("#jplayer_inspector_1").jPlayerInspector({jPlayer:$("#jquery_jplayer_N")});
+});
+//]]>
+</script>
+<!-- Flattr -->
+<script type="text/javascript">
+	/* Flattr code for jPlayer.org */
+	(function() {
+		var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+		t.parentNode.insertBefore(s, t);
+	})();
+</script>
+<!-- End Flattr -->
+<!-- Google Analytics -->
+<script type="text/javascript">
+	/* Google Analytics code for jPlayer.org */
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-3557377-9', 'jplayer.org');
+	ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+</head>
+<body class="demo" onload="prettyPrint();">
+<div id="container">
+
+	<div id="content_main">
+		<section>
+			<h2>The jPlayer Playlist Add-on (jPlayerPlaylist)</h2>
+			<p>
+				This page contains a demo of and documentation for the new jPlayer Playlist add-on, <code class="prettyprint">jPlayerPlaylist</code> and is intended to complement other playlist demos.
+				<code class="prettyprint">jPlayerPlaylist</code> requires jPlayer and jQuery.
+			</p>
+
+			<h5>The demonstration</h5>
+		
+
+<pre class="prettyprint linenums">
+myPlaylist.add({
+  title:"Tempered Song",
+  artist:"Miaow",
+  mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+  oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+  poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+});
+</pre>
+
+		<div id="jp_container_N" class="jp-video jp-video-270p">
+			<div class="jp-type-playlist">
+				<div id="jquery_jplayer_N" class="jp-jplayer"></div>
+				<div class="jp-gui">
+					<div class="jp-video-play">
+						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+					</div>
+					<div class="jp-interface">
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
+						<div class="jp-details">
+							<ul>
+								<li><span class="jp-title"></span></li>
+							</ul>
+						</div>
+						<div class="jp-controls-holder">
+							<ul class="jp-controls">
+								<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+								<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+							</ul>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+							</div>
+							<ul class="jp-toggles">
+								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+								<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+								<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="jp-playlist">
+					<ul>
+						<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+						<li></li>
+					</ul>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+		</div>
+			<p style="margin-top:1em;">
+				<code>setPlaylist( <a href="javascript:;" id="playlist-setPlaylist-audio-mix">[Audio Mix]</a> | <a href="javascript:;" id="playlist-setPlaylist-video-mix">[Video Mix]</a> | <a href="javascript:;" id="playlist-setPlaylist-media-mix">[Media Mix]</a> )</code><br />
+
+				Miaow audio: <code>add( <a href="javascript:;" id="playlist-add-bubble">{Bubble}</a> | <a href="javascript:;" id="playlist-add-hidden">{Hidden}</a> | <a href="javascript:;" id="playlist-add-tempered-song">{Tempered Song}</a> | <a href="javascript:;" id="playlist-add-lentement">{Lentement}</a> )</code><br />
+				The Stark Palace audio: <code>add( <a href="javascript:;" id="playlist-add-cro-magnon-man">{Cro Magnon Man}</a> | <a href="javascript:;" id="playlist-add-your-face">{Your Face}</a> | <a href="javascript:;" id="playlist-add-cyber-sonnet">{Cyber Sonnet}</a> )</code><br />
+				Various video: <code>add( <a href="javascript:;" id="playlist-add-big-buck-bunny">{Big Buck Bunny}</a> | <a href="javascript:;" id="playlist-add-incredibles">{Incredibles}</a> | <a href="javascript:;" id="playlist-add-finding-nemo">{Finding Nemo}</a> )</code><br />
+
+				<code><a href="javascript:;" id="playlist-remove">remove</a>(  <a href="javascript:;" id="playlist-remove--2">-2</a> | <a href="javascript:;" id="playlist-remove--1">-1</a> | <a href="javascript:;" id="playlist-remove-0">0</a> | <a href="javascript:;" id="playlist-remove-1">1</a> | <a href="javascript:;" id="playlist-remove-2">2</a> )</code>
+				| <code><a href="javascript:;" id="playlist-shuffle">shuffle</a>( <a href="javascript:;" id="playlist-shuffle-false">false</a> | <a href="javascript:;" id="playlist-shuffle-true">true</a> )</code><br />
+
+				<code>select( <a href="javascript:;" id="playlist-select--2">-2</a> | <a href="javascript:;" id="playlist-select--1">-1</a> | <a href="javascript:;" id="playlist-select-0">0</a> | <a href="javascript:;" id="playlist-select-1">1</a> | <a href="javascript:;" id="playlist-select-2">2</a> )</code>
+				| <code><a href="javascript:;" id="playlist-next">next</a>()</code> | <code><a href="javascript:;" id="playlist-previous">previous</a>()</code><br />
+
+				<code><a href="javascript:;" id="playlist-play">play</a>( <a href="javascript:;" id="playlist-play--2">-2</a> | <a href="javascript:;" id="playlist-play--1">-1</a> | <a href="javascript:;" id="playlist-play-0">0</a> | <a href="javascript:;" id="playlist-play-1">1</a> | <a href="javascript:;" id="playlist-play-2">2</a> )</code>
+				| <code><a href="javascript:;" id="playlist-pause">pause</a>()</code><br />
+
+				<code>option( "autoPlay", <a href="javascript:;" id="playlist-option-autoPlay-false">false</a> | <a href="javascript:;" id="playlist-option-autoPlay-true">true</a> )</code> Default: false<br />
+				<code>option( "enableRemoveControls", <a href="javascript:;" id="playlist-option-enableRemoveControls-false">false</a> | <a href="javascript:;" id="playlist-option-enableRemoveControls-true">true</a> )</code> Default: false<br />
+				<code>option( "displayTime", <a href="javascript:;" id="playlist-option-displayTime-0">0</a> | <a href="javascript:;" id="playlist-option-displayTime-fast">'fast'</a> | <a href="javascript:;" id="playlist-option-displayTime-slow">'slow'</a> | <a href="javascript:;" id="playlist-option-displayTime-2000">2000</a> )</code> Default: 'slow'<br />
+				<code>option( "addTime", <a href="javascript:;" id="playlist-option-addTime-0">0</a> | <a href="javascript:;" id="playlist-option-addTime-fast">'fast'</a> | <a href="javascript:;" id="playlist-option-addTime-slow">'slow'</a> | <a href="javascript:;" id="playlist-option-addTime-2000">2000</a> )</code> Default: 'fast'<br />
+				<code>option( "removeTime", <a href="javascript:;" id="playlist-option-removeTime-0">0</a> | <a href="javascript:;" id="playlist-option-removeTime-fast">'fast'</a> | <a href="javascript:;" id="playlist-option-removeTime-slow">'slow'</a> | <a href="javascript:;" id="playlist-option-removeTime-2000">2000</a> )</code> Default: 'fast'<br />
+				<code>option( "shuffleTime", <a href="javascript:;" id="playlist-option-shuffleTime-0">0</a> | <a href="javascript:;" id="playlist-option-shuffleTime-fast">'fast'</a> | <a href="javascript:;" id="playlist-option-shuffleTime-slow">'slow'</a> | <a href="javascript:;" id="playlist-option-shuffleTime-2000">2000</a> )</code> Default: 'slow'
+
+			</p>
+			<p>
+				Equivalent Effect: <code><a href="javascript:;" id="playlist-equivalent-1-a">add(Your Face, true)</a></code> == <code><a href="javascript:;" id="playlist-equivalent-1-b">add(Your Face) then play(-1)</a></code>
+			</p>
+			<p>
+				Avoid code like: <code><a href="javascript:;" id="playlist-avoid-1">remove(2) then remove(3)</a></code><br />
+				Because the second command will only work if the remove animation time, <code class="prettyprint">removeTime</code>, is zero.
+				Even then, it will look like it removes the 3rd and 5th items from the original playlist before both commands executed.
+				This is because the <code class="prettyprint">remove(2)</code> removes the 3rd item and then <code class="prettyprint">remove(3)</code> removes the 4th item, which was the 5th item before the 3rd item was removed.
+				To remove the 3rd and 4th items, you'd use <code class="prettyprint">remove(2)</code> and then <code class="prettyprint">remove(2)</code> again.
+				The <code class="prettyprint">remove()</code> method returns a <code class="prettyprint">true</code> when successful, a <code class="prettyprint">false</code> when ignored, which allows you to know whether it worked or not.
+			</p>
+
+			<div id="jplayer_inspector_1"></div>
+			<p class="media-copyright">Media used in demo:<br />
+				&copy; 2009 The Stark Palace - <a href="http://www.sharkbatter.com/" target="_blank">sharkbatter.com</a><br />
+				&copy; 2003 Miaow / Arnaud Laflaquiere - <a href="http://www.miaowmusic.com" target="_blank">MiaowMusic.com</a><br />
+				&copy; 2008 Blender Foundation - <a href="http://www.bigbuckbunny.org" target="_blank">bigbuckbunny.org</a><br />
+				&copy; 2003-2004 Disney / Pixar - <a href="http://www.pixar.com" target="_blank">pixar.com</a>
+			</p>
+
+			<h5>The constructor</h5>
+			<p>The playlist in this demo is instanced with 1 item in it and uses the <code class="prettyprint">{supplied:"ogv,m4v,oga,mp3"}</code> option to enable a media player that accepts audio and video.</p>
+
+<pre class="prettyprint linenums">
+var myPlaylist = new jPlayerPlaylist({
+  jPlayer: "#jquery_jplayer_N",
+  cssSelectorAncestor: "#jp_container_N"
+}, [
+  {
+    title:"Cro Magnon Man",
+    artist:"The Stark Palace",
+    mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+    oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+    poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+  }
+], {
+  playlistOptions: {
+    enableRemoveControls: true
+  },
+  swfPath: "/js",
+  supplied: "ogv, m4v, oga, mp3",
+  smoothPlayBar: true,
+  keyEnabled: true,
+  audioFullScreen: true // Allows the audio poster to go full screen via keyboard
+});
+</pre>
+
+			<p>
+				The constructor might look scary to JavaScript newcomers, but it is really just 1 line of JavaScript, laid out in an easy to read manner.
+				JSON (JavaScript Object Notation) is used in this demo to create the objects and arrays passed to the constructor.
+				The parameters are an object, an array and an object:
+			</p>
+
+<pre class="prettyprint linenums">
+// This is pseudo-code.
+var myPlaylist = new jPlayerPlaylist({cssSelector}, [playlist], {options});
+</pre>
+
+			<p>
+				The parameters can be created outside the constructor to suit your goal.
+				In particular, the options may be common to all your instances on a page.
+				The playlist could be generated through an AJAX call to a JSON or XML url.
+			</p>
+
+<pre class="prettyprint linenums">
+var cssSelector = { jPlayer: "#jquery_jplayer_N", cssSelectorAncestor: "#jp_container_N" };
+var playlist = []; // Empty playlist
+var options = { swfPath: "/js", supplied: "ogv, m4v, oga, mp3" };
+var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+</pre>
+
+
+			<h5>Defining the css selectors</h5>
+			<p>
+				The first parameter is an object used to define the css selectors that point at the jPlayer and container HTML elements.
+				The jPlayer element is where the video output is displayed and the container, cssSelectorAncestor, is the outter divider of the player skin HTML.
+			</p>
+			<p>
+				To use the default values, use an empty object, <code class="prettyprint">{}</code>.
+				The defaults are:
+			</p>
+
+<pre class="prettyprint linenums">
+{
+  jPlayer: "#jquery_jplayer_1",
+  cssSelectorAncestor: "#jp_container_1"
+}
+</pre>
+
+			<h5>Defining the playlist content</h5>
+			<p>
+				The second parameter is an Array of Objects used to define the playlist.
+				The object elements are used by the jPlayer <code class="prettyprint">setMedia</code> command, so follow the rules for suppling the formats defined in the <code class="prettyprint">supplied</code> option.
+				The <code class="prettyprint">title</code>, <code class="prettyprint">artist</code> and <code class="prettyprint">free</code> properties are used by <code class="prettyprint">jPlayerPlaylist</code> to display each item.
+				To start with an empty playlist, use an empty array, <code class="prettyprint">[]</code>.
+				A playlist with a single audio item looks like:
+			</p>
+
+<pre class="prettyprint linenums">
+[
+  {
+    title:"The Title",
+    artist:"The Artist", // Optional
+    free: Boolean, // Optional - Generates links to the media
+    mp3:"MP3 URL", // Dependant on supplied option
+    oga:"OGA URL", // Dependant on supplied option
+    poster: "Poster URL" // Optional
+  }
+]
+</pre>
+
+			<h5>Defining the jPlayer and playlist options</h5>
+			<p>
+				The third parameter is an object to define the jPlayer options and jPlayerPlaylist options.
+				This object is passed to jPlayer, and is used to setup the basic jPlayer options, such as <code class="prettyprint">solution</code>, <code class="prettyprint">supplied</code> and the all important <code class="prettyprint">swfPath</code>.
+				You can define all options, except for the <code class="prettyprint">cssSelectorAncestor</code> and the <code class="prettyprint">repeat</code> event handler, which are overridden by the jPlayerPlaylist code.
+				Remember that event handlers are not really options. The playlist code binds event handlers to jPlayer events, such as <code class="prettyprint">ready</code> and <code class="prettyprint">ended</code>, which might interact with your event handlers in unexpected ways.
+				Example options are:
+			</p>
+
+<pre class="prettyprint linenums">
+{
+  playlistOptions: {
+    autoPlay: true,
+    enableRemoveControls: true
+  },
+  swfPath: "/js",
+  supplied: "mp3, oga"
+}
+</pre>
+
+			<h5>Default playlist options:</h5>
+
+<pre class="prettyprint linenums">
+playlistOptions: {
+  autoPlay: false,
+  loopOnPrevious: false,
+  shuffleOnLoop: true,
+  enableRemoveControls: false,
+  displayTime: 'slow',
+  addTime: 'fast',
+  removeTime: 'fast',
+  shuffleTime: 'slow'
+}
+</pre>
+
+			<h5>Control flag descriptions:</h5>
+			<p>
+				<b>autoPlay</b> : Boolean : Will auto-play when instanced on the page, and when a new playlist is given using <code class="prettyprint">setPlaylist()</code>. Remember that mobile devices require a gesture before anything will play. Recommend leaving this as false initially... And change it later if you want when changing the playlist through a user gesture. eg., They clicked on a link to change the playlist and your click handler changes autoPlay to true before you setPlaylist().<br />
+				<b>loopOnPrevious</b> : Boolean : If loop is active, the playlist will loop back to the end when executing <code class="prettyprint">previous()</code>.<br />
+				<b>shuffleOnLoop</b> : Boolean : If loop and shuffle are active, the playlist will shuffle when executing <code class="prettyprint">next()</code> on the last item.<br />
+				<b>enableRemoveControls</b> : Boolean : Displays the remove controls for each item.<br />
+			</p>
+			<h5>Animation timing controls:</h5>
+			<p>
+				These options use jQuery animation timings, where the time is in milliseconds and also the strings 'slow' and 'fast' can be used.
+				To make changes instant, set the time to zero, which removes the animation effect.
+			</p>
+			<p>
+				<b>displayTime</b> : Number/String : The period of the slide-up and slide-down animations when a new playlist is displayed.<br />
+				<b>addTime</b> : Number/String : The period of the slide-down animation when a new item is added.<br />
+				<b>removeTime</b> : Number/String : The period of the slide-up animation when a item is removed.<br />
+				<b>shuffleTime</b> : Number/String : The period of the slide-up and slide-down animations when a playlist is shuffled.<br />
+			</p>
+
+			<h5>jPlayerPlaylist methods:</h5>
+
+			<p>
+				<b>setPlaylist(playlist:Array) : Void</b><br />
+				Change the playlist.
+				(See <code class="prettyprint">playlistOptions.autoPlay</code> to cause it to play automatically.)
+			</p>
+
+<pre class="prettyprint linenums">
+myPlaylist.setPlaylist([
+  {
+    title:"Cro Magnon Man",
+    artist:"The Stark Palace",
+    mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+    oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+    poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+  },
+  {
+    title:"Hidden",
+    artist:"Miaow",
+    free: true,
+    mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+    oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
+    poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+  }
+]);
+</pre>
+			<p>
+				<b>add(media:Object, [playNow:Boolean]) : Void</b><br />
+				Add a media item to the end of the playlist.
+				Optional playNow param to start it playing after adding it.
+			</p>
+
+<pre class="prettyprint linenums">
+myPlaylist.add({
+  title:"Your Face",
+  artist:"The Stark Palace",
+  mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+  oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+  poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+});
+</pre>
+
+			<p>
+				<b>remove([index:Number]) : Boolean</b><br />
+				Removes the item from the playlist.
+				Removes all items if no param is given.
+				A positive index removes items from the start of the playlist while a negative index removes items from the end.
+			</p>
+
+<pre class="prettyprint linenums">
+// Examples of usage:
+myPlaylist.remove(); // Removes all items
+myPlaylist.remove(0); // Removes the 1st item
+myPlaylist.remove(1); // Removes the 2nd item
+myPlaylist.remove(-1); // Removes the last item
+
+if( myPlaylist.remove(0) ) {
+  alert("1st item removed successfully!");
+} else {
+  alert("Failed to remove 1st item!"); // A remove operation is being animated.
+}
+</pre>
+
+			<p>
+				<b>select(index:Number) : Void</b><br />
+				Selects the item in the playlist.
+				A positive index selects items from the start of the playlist while a negative index selects items from the end.
+			</p>
+
+<pre class="prettyprint linenums">
+// Examples of usage:
+myPlaylist.select(0); // Selects the 1st item
+myPlaylist.select(1); // Selects the 2nd item
+myPlaylist.select(-1); // Selects the last item
+</pre>
+
+			<p>
+				<b>play([index:Number]) : Void</b><br />
+				Plays the item in the playlist.
+				Plays the current item if no param is given.
+				A positive index plays items from the start of the playlist while a negative index plays items from the end.
+			</p>
+
+<pre class="prettyprint linenums">
+// Examples of usage:
+myPlaylist.play(); // Plays the currently selected item
+myPlaylist.play(0); // Plays the 1st item
+myPlaylist.play(1); // Plays the 2nd item
+myPlaylist.play(-1); // Plays the last item
+</pre>
+
+			<p>
+				<b>shuffle([shuffled:Boolean], [playNow:Boolean]) : Void</b><br />
+				Shuffle the playlist.
+				Toggles shuffled setting if no param is given.
+				True always shuffles the playlist.
+				False will un-shuffle if it was shuffled.
+				The playNow param will cause the first item to play automatically.
+				(playNow can only be used if the first param is given.
+				Use shuffle(undefined,true) to toggle and play.)
+			</p>
+
+<pre class="prettyprint linenums">
+// Examples of usage:
+myPlaylist.shuffle(); // Toggles shuffle state
+myPlaylist.shuffle(true); // Shuffle the playlist
+myPlaylist.shuffle(false); // Un-shuffle the playlist
+myPlaylist.shuffle(true, true); //  Shuffle the playlist and plays
+</pre>
+
+			<p>
+				<b>next() : Void</b><br />
+				Move to and play the next item in the playlist.
+				The behaviour for the last item depends on the loop state, the shuffle state and the <code class="prettyprint">playlistOptions.shuffleOnLoop</code> option.
+			</p>
+
+<pre class="prettyprint linenums">
+myPlaylist.next();
+</pre>
+
+			<p>
+				<b>previous() : Void</b><br />
+				Move to and play the previous item in the playlist.
+				The behaviour for the first item depends on the loop state and the <code class="prettyprint">playlistOptions.loopOnPrevious</code> option.
+				(The playlist is never shuffled when looping back to the last item.)
+			</p>
+
+<pre class="prettyprint linenums">
+myPlaylist.previous();
+</pre>
+
+			<p>
+				<b>pause() : Void</b><br />
+				Pause the current item.
+			</p>
+
+<pre class="prettyprint linenums">
+myPlaylist.pause();
+</pre>
+
+			<p>
+				<b>option(option:String, [value:Mixed]) : Void</b><br />
+				Set or get the playlist option.
+			</p>
+
+<pre class="prettyprint linenums">
+// Examples of usage:
+var controls = myPlaylist.option("enableRemoveControls"); // Get option
+myPlaylist.option("enableRemoveControls", true); // Set option
+</pre>
+
+			<h5>The HTML Structure</h5>
+			<p>
+				The playlist looks for the class <code class="prettyprint">jp-playlist</code> within the <code class="prettyprint">cssSelectorAncestor</code> element.
+				A &lt;ul&gt; element is expected here, which is used to generate the item list.
+			</p>
+
+<pre class="prettyprint linenums">
+&lt;div id="jp_container_N"&gt;
+  &lt;div class="jp-playlist"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt; &lt;!-- Empty &lt;li&gt; so your HTML conforms with the W3C spec --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			<p>
+				The playlist is automatically added as &lt;li&gt; elements to the &lt;ul&gt; element.
+				The <code class="prettyprint">jp-free-media</code> span is only generated when the playlist item has its <code class="prettyprint">free</code> property set.
+			</p>
+
+<pre class="prettyprint linenums">
+&lt;li&gt;
+  &lt;div&gt;
+    &lt;a class="jp-playlist-item-remove" href="javascript:;"&gt;&amp;times;&lt;/a&gt;
+    &lt;span class="jp-free-media"&gt;
+      (&lt;a tabindex="1" href="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3" class="jp-playlist-item-free"&gt;mp3&lt;/a&gt; )
+    &lt;/span&gt;
+    &lt;a tabindex="1" class="jp-playlist-item" href="javascript:;"&gt;Cro Magnon Man &lt;span class="jp-artist"&gt;by The Stark Palace&lt;/span&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+</pre>
+
+			<h5>The Techie Bit</h5>
+			<p>
+				The jPlayerPlaylist code is enclosed in a self-executing function that protects the <code class="prettyprint">jQuery</code> variable within its scope,
+				thus allowing the <code class="prettyprint">$</code> shortcut to be used within its code without conflicting with other JavaScript libraries.
+				jPlayer does this too of course, which allows <code class="prettyprint">jQuery.noConflict()</code> to be used.
+			</p>
+			<p>
+				The jPlayerPlaylist is an add-on to jPlayer. It is not a jQuery plugin, but a JavaScript object definition. You instance it like any other object, using the <code class="prettyprint">new</code> operator.
+			</p>
+			<p>
+				<code class="prettyprint">jPlayerPlaylist</code> is the only variable added to Javascript's global namespace.
+			</p>
+			<p>
+				When using jPlayerPlaylist with the animations and issuing comands from JavaScript, be aware that the animations take time to complete.
+				Bombarding the playlist with many JavaScript commands may well give unexpected results unless you set all the animation timings to zero.
+			</p>
+			<p>
+				While this demo gives a poster image for all videos, in practice the video poster is only displayed if the Video item is first and autoPlay is false.
+			</p>
+
+		</section>
+	</div>
+	<aside>
+
+		<div class="section highlight">
+			<h2>Theme Switcher</h2>
+			<p>Try another theme.</p>
+			<select id="themeswitcher">
+				<option value="0">Blue Monday</option>
+				<option value="1" selected="selected">Pink Flag</option>
+			</select>
+		</div>
+
+	</aside>
+	<footer>
+		<p>
+			<a href="http://www.happyworm.com"><img src="/graphics/worm.jpg" />&copy; 2009 - 2014 Happyworm Ltd</a> - Last update: 1st September 2014		</p>
+		<a href="http://www.w3.org/html/logo/"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a>
+		<a id="twitter" href="http://twitter.com/jPlayerOrg"><img alt="twitter" src="/graphics/twitter_small.png"/> follow us on twitter </a>
+	</footer>
+</div>
+</body>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript" src="/js/prettify/prettify-jPlayer.js"></script>
+
+</html>
