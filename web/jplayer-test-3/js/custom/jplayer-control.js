@@ -315,4 +315,92 @@ $(document).ready(function(){
 		myPlaylist.play(-1);
 		
   	});
+	
+	
+	   function searchTable(input)
+	      {
+	      var table = $('#song_list_table');
+	      table.find('tr').each(function(index, row)
+	      {
+	      var cells = $(row).find('td');
+	      
+	      if(cells.length > 0)
+	      {
+	      var found = false;
+	      cells.each(function(index, td)
+	      {
+	      	var regExp = new RegExp(input, 'i');
+	      	
+	      	//var ahref = jQuery.parseHTML(${td}.html());
+	      
+	      	if(regExp.test($(td).text()) || regExp.test($(td).html()))
+	      	//if(regExp.test($(td).text()) || regExp.test(ahref.attr("author")))
+	      	{
+	      		found = true;
+	      		return false;
+	      	}
+	      });
+	      if(found == true)$(row).show();else $(row).hide();
+	      }
+	      });
+	      }
+	   
+	   $('#song_search').keyup(function()
+		       {
+		       	searchTable($(this).val());
+		       });
+	   
+	   $("#add_to_list").click(function() {
+		   //alert("test");
+		   myPlaylist.remove();
+		   addToList();
+		   myPlaylist.play();
+		   
+	   });
+		      
+	   function addToList() {
+      	 
+	        var songs =	 $("#jp_container_song .track");
+	        
+	        for (var i = 0; i < songs.length; i++) {
+	        var song = songs[i];
+	        
+	        myPlaylist.add(
+        			{
+title:song.text,
+artist:$(song).attr("artist"),
+mp3:$(song).attr("song"),
+poster: $(song).attr("img")
+        			}
+        	);
+	        }
+	                	 
+	        /*
+	   	    var table = $('#song_list_table');
+	   	    var rows = table.find('tbody>tr>td>a');
+	   	    
+	   	    
+	   	    for (var i = 0; i < rows.length; i++) {
+	   	    	var test = rows[i].text;
+	   	    	alert("test");
+	   	    	//alert (rows[i].text() );
+	   	    }
+	   	    */
+	   }	    
+	   	    
+	   /*
+	   function addToList() {
+   	    var table = $('#song_list_table');
+   	    var rows = table.find('tbody>tr->td');
+
+   	    for (var i = rows.length - 1; i > 0; i--) {
+   	        var j = Math.floor(Math.random() * (i + 1));
+   	        var temp = rows[i];
+   	        rows.eq(i - 1).after(rows[j]);
+   	        rows.eq(j - 1).after(temp);
+   	    }
+	   
+   	}
+   	*/
+	   
 });
