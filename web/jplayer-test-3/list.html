@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset=utf-8 />
-    <title>Demo : The jPlayerPlaylist Object</title>
+    <title>Song List</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link href="css/jPlayer.css" rel="stylesheet" type="text/css" />
     <link href="css/prettify-jPlayer.css" rel="stylesheet" type="text/css" />
@@ -13,43 +13,8 @@
     <script type="text/javascript" src="js/jquery.jplayer.inspector.js"></script>
     <script type="text/javascript" src="js/themeswitcher.js"></script>
     <script type="text/javascript" src="js/custom/jplayer-control.js"></script>
-    <script type="text/javascript">
-      //<![CDATA[
-                 function addToList1() {
-                	 
-        var songs =	 $("#jp_container_song .track");
-        
-        
-        var song = songs[1];
-
-        var test = song.text;
-        var artist  = $(song).attr("song");
-                	 
-   	    var table = $('#song_list_table');
-   	    var rows = table.find('tbody>tr>td>a');
-   	    
-   	    
-   	    for (var i = 0; i < rows.length; i++) {
-   	    	var test = rows[i].text;
-   	    	alert("test");
-   	    	//alert (rows[i].text() );
-   	    }
-
-   	    /*
-   	    for (var i = rows.length - 1; i > 0; i--) {
-   	        var j = Math.floor(Math.random() * (i + 1));
-   	        var temp = rows[i];
-   	        rows.eq(i - 1).after(rows[j]);
-   	        rows.eq(j - 1).after(temp);
-   	    }
-   	    */
-   	}
-      //]]>
-    </script>
   </head>
-  <!--  
-    <body class="demo" onload="prettyPrint();">
-    -->
+
   <body>
     <div id="container">
       <div id="content_main">
@@ -105,27 +70,23 @@
             </div>
           </div>
         </div>
+
+      </div>
         <div id="jp_container_song">
+        
+           <br>
+           <br>
+           <br>
           <span>Select a song : </span>
           <br>
           <br>
-          <input type="text" id="song_search"/> <label for="song_search">Search for songs </label> 
+          <input type="text" id="song_search"/> <label for="song_search">Search</label> 
           <br>
-          <br>
-          <!--  
-          <a onclick="addToList()" href="#" id = "add_to_list">Add to the play list</a>
-          -->
           <a href="#" id = "add_to_list">Add to the play list</a>
-          
-          <!--  
-          <ul>
-            <li><a href="#" song="./mp3/7912388.mp3"  artist="malumiqi" img="./img/snowwhite.jpg" class="track">Long Long Ago</a></li>
-            <li><a href="#" song="./mp3/12907629.mp3" artist="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers</a></li>
-            <li><a href="#" song="./mp3/254817452.mp3" artist="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></li>
-            <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" img="./img/jasmine.jpg" class="track">Lismore</a></li>
-            <li><a href="#" song="http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3" class="track">The Separation</a></li>
-          </ul>
-          -->
+          <br>
+          <a href="#" id = "clean_list">Empty play list</a>
+          <br>
+          <br>
           
            <table id="song_list_table" >
                   <tbody>
@@ -148,7 +109,6 @@
            </table>
                
         </div>
-      </div>
     </div>
   </body>
 </html>
