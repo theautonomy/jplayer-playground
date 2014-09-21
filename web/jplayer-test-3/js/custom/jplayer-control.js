@@ -72,7 +72,7 @@ $(document).ready(function () {
     });
 
     function addToList() {
-        var songs = $("#jp_container_song .mp3-track, #jp_containr_song .video-track");
+        var songs = $("#jp_container_song .mp3-track");
         for (var i = 0; i < songs.length; i++) {
             var song = songs[i];
             myPlaylist.add({
@@ -82,6 +82,17 @@ $(document).ready(function () {
                 poster: $(song).attr("img")
             });
         }
+        var videos = $("#jp_container_song .video-track");
+        for (var i = 0; i < videos.length; i++) {
+            var video = videos[i];
+            myPlaylist.add({
+                title: video.text,
+                artist: $(video).attr("artist"),
+                m4v: $(video).attr("video"),
+                poster: $(video).attr("img")
+            });
+        }
+ 
         myPlaylist.play();
     }
 
