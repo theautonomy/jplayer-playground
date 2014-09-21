@@ -18,11 +18,22 @@ $(document).ready(function () {
         audioFullScreen: true
     });
 
-    $("#jp_container_song .track").click(function (e) {
+    $("#jp_container_song .mp3-track").click(function (e) {
         myPlaylist.add({
             title: $(this).text(),
             artist: $(this).attr("artist"),
             mp3: $(this).attr("song"),
+            poster: $(this).attr("img")
+        });
+        myPlaylist.play(-1);
+
+    });
+
+    $("#jp_container_song .video-track").click(function (e) {
+        myPlaylist.add({
+            title: $(this).text(),
+            artist: $(this).attr("artist"),
+            m4v: $(this).attr("video"),
             poster: $(this).attr("img")
         });
         myPlaylist.play(-1);
@@ -61,7 +72,7 @@ $(document).ready(function () {
     });
 
     function addToList() {
-        var songs = $("#jp_container_song .track");
+        var songs = $("#jp_container_song .mp3-track, #jp_containr_song .video-track");
         for (var i = 0; i < songs.length; i++) {
             var song = songs[i];
             myPlaylist.add({
