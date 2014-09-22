@@ -18,24 +18,13 @@ $(document).ready(function () {
         audioFullScreen: true
     });
 
-    $("#jp_container_song .mp3-track").click(function (e) {
-        myPlaylist.add({
-            title: $(this).text(),
-            artist: $(this).attr("artist"),
-            mp3: $(this).attr("song"),
-            poster: $(this).attr("img")
-        });
-        myPlaylist.play(-1);
-
-    });
-
-    $("#jp_container_song .video-track").click(function (e) {
-        myPlaylist.add({
-            title: $(this).text(),
-            artist: $(this).attr("artist"),
-            m4v: $(this).attr("video"),
-            poster: $(this).attr("img")
-        });
+    $("#jp_container_song .track").click(function (e) {
+        var item = {};
+        item["title"] = $(this).text(); 
+        item["artist"] = $(this).attr("artist");
+        item["poster"] = $(this).attr("poster");
+        item[$(this).attr("format")] = $(this).attr("file");
+        myPlaylist.add( item );
         myPlaylist.play(-1);
 
     });
@@ -72,25 +61,17 @@ $(document).ready(function () {
     });
 
     function addToList() {
-        var songs = $("#jp_container_song .mp3-track");
+        var songs = $("#jp_container_song .track");
         for (var i = 0; i < songs.length; i++) {
             var song = songs[i];
-            myPlaylist.add({
-                title: song.text,
-                artist: $(song).attr("artist"),
-                mp3: $(song).attr("song"),
-                poster: $(song).attr("img")
-            });
-        }
-        var videos = $("#jp_container_song .video-track");
-        for (var i = 0; i < videos.length; i++) {
-            var video = videos[i];
-            myPlaylist.add({
-                title: video.text,
-                artist: $(video).attr("artist"),
-                m4v: $(video).attr("video"),
-                poster: $(video).attr("img")
-            });
+            var item = {};
+            
+            item["title"] = song.text;
+            item["artist"] = $(song).attr("artist");
+            item["poster"] = $(song).attr("poster");
+            item[$(song).attr("format")] = $(song).attr("file");
+            
+            myPlaylist.add( item );
         }
  
         myPlaylist.play();
