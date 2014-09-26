@@ -11,7 +11,7 @@ $(document).ready(function () {
         playlistOptions: {
             enableRemoveControls: true
         },
-        swfPath: "../js",
+        swfPath: "../../js",
         supplied: "webmv, ogv, m4v, oga, mp3",
         smoothPlayBar: true,
         keyEnabled: true,
