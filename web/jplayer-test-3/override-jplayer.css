@@ -1,0 +1,10 @@
+
+#content_main {
+    width: 550px;
+}
+
+.scroll_div {
+	overflow-y: scroll; 
+	height:180px;
+}
+	
