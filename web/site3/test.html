@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+
+<!-- Website Design By: www.happyworm.com -->
+<title>Demo : jPlayer as an audio playlist player</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+<!--  
+<link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
+-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+ <script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script> 
+ <script type="text/javascript" src="http://jplayer.org/latest/js/jplayer.playlist.min.js"></script>    
+ 
+ 
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{
+			title:"Gypsy Hora",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/gypsyhora.mp3"
+		},
+		{
+			title:"Sammy's Freilach",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/sammysfreilach.mp3"
+		},
+		{
+			title:"Elokim Eli Ata",
+			artist:"Ora Bat Chaim",
+			mp3:"http:///www.klezmorim-online.de/lark/elokimeliata.mp3"
+		},
+		{
+			title:"Let's be happy",
+			artist:"Traum",
+			mp3:"http:///www.klezmorim-online.de/lark/letsbehappy.mp3",
+		},
+		{
+			title:"Long live the Nigun",
+			artist:"Gil Aldema",
+			mp3:"http:///www.klezmorim-online.de/lark/longlivethenigun.mp3"
+		},
+		{
+			title:"Oli's Freilach",
+			artist:"Olivier Truan",
+			mp3:"http:///www.klezmorim-online.de/lark/olisfreilach.mp3"
+		},
+		{
+			title:"Drimindoo",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/drimindoo.mp3"
+		},
+		{
+			title:"Kashene March",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/kashenemarch.mp3"
+		},
+		{
+			title:"Ballad for a Klezmer",
+			artist:"Pansera/Feidman",
+			mp3:"http:///www.klezmorim-online.de/lark/balladforaklezmer.mp3"
+		},
+		{
+			title:"French Waltz",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/frenchwaltz.mp3"
+		},
+		{
+			title:"Donna Donna",
+			artist:"S. Secunda",
+			mp3:"http:///www.klezmorim-online.de/lark/donnadonna.mp3"
+		},
+		{
+			title:"If I were a rich man",
+			artist:"Jerry Bock",
+			mp3:"http:///www.klezmorim-online.de/lark/richman.mp3"
+		},
+		{
+			title:"Lark",
+			artist:"Jo Ambros",
+			mp3:"http:///www.klezmorim-online.de/lark/lark.mp3"
+		},
+		{
+			title:"Klezmer's Freilach",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/klezmersfreilach.mp3"
+		},
+		{
+			title:"I love my love",
+			artist:"Trad.",
+			mp3:"http:///www.klezmorim-online.de/lark/ilovemylove.mp3"
+		},
+	], {
+		swfPath: "http://www.klezmorim-online.de/player/demos/js/",
+		supplied: "oga,mp3",
+		wmode: "window",
+		solution:"flash, html"
+	});
+});
+//]]>
+</script>
+</head>
+<body style="overflow: hidden;margin: 0;">
+
+		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+		<div id="jp_container_1" class="jp-audio">
+			<div class="jp-type-playlist">
+				<div class="jp-gui jp-interface">
+					<ul class="jp-controls">
+						<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+						<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+					</ul>
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+						</div>
+					</div>
+					<div class="jp-volume-bar">
+						<div class="jp-volume-bar-value"></div>
+					</div>
+					<div class="jp-time-holder">
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
+					</div>
+					
+				</div>
+				<div class="jp-playlist">
+					<ol>
+						<li></li>
+					</ol>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>

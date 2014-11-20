@@ -59,7 +59,8 @@
       		if (!img_location) {
       			img_location = "./img/princess.jpg";
       		} 
-     		$("#jp_container_song img").attr('src', img_location).attr('width', '420px'); 
+     		//$("#jp_container_song img").attr('src', img_location).attr('width', '420px'); 
+     		$("#jp_container_song img").attr('src', img_location).attr('width', '100%').attr('height', '100%'); 
       		my_jPlayer.jPlayer("setMedia", {
       			mp3: $(this).attr("href")
       		});

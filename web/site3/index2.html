@@ -10,16 +10,20 @@
     <link rel="stylesheet" type="text/css" href="css/kickstart.css" />
     <script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script>                              
       -->
-    <link type="text/css" href="http://jplayer.org/latest/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
+
+    <link href="js/jPlayer-2.8.3/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/kickstart.css" />
     <link rel="stylesheet" type="text/css" href="style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="playlist.css" media="all">
+    <!--  
     <link rel="stylesheet" type="text/css" href="override-jplayer.css" media="all">
+    -->
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jPlayer-2.8.3/lib/jquery.min.js"></script>
     <script type="text/javascript" src="js/kickstart.js"></script>                                  
-     <script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script>                      
+	<script type="text/javascript" src="js/jPlayer-2.8.3/dist/jplayer/jquery.jplayer.min.js"></script>
     <script src="js/custom/jplayer-control.js"></script>
+    
 
     <script type="text/javascript">
       function change() {
@@ -77,6 +81,21 @@
       });
       }
       
+      
+      function shuffleRows() {
+    	    var table = $('#song_list_table');
+    	    //var table = $('#my_table');
+    	    var rows = table.find('tbody>tr');
+
+    	    for (var i = rows.length - 1; i > 0; i--) {
+    	        var j = Math.floor(Math.random() * (i + 1));
+    	        var temp = rows[i];
+    	        rows.eq(i - 1).after(rows[j]);
+    	        rows.eq(j - 1).after(temp);
+    	    }
+    	}
+      
+      
       $(document).ready(function() {
       
        change();
@@ -101,6 +120,8 @@
     <div class="grid">
       <br>
       <div class="col_12">
+      
+        <!--  
         <div id="jp_container_1" class="jp-audio">
           <div class="jp-type-single">
             <div class="jp-gui jp-interface">
@@ -138,6 +159,44 @@
                 </div>
             </div>
           </div>
+          -->
+          
+            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+	<div class="jp-type-single">
+		<div class="jp-gui jp-interface">
+			<div class="jp-controls">
+				<button class="jp-play" role="button" tabindex="0">play</button>
+				<button class="jp-stop" role="button" tabindex="0">stop</button>
+			</div>
+			<div class="jp-progress">
+				<div class="jp-seek-bar">
+					<div class="jp-play-bar"></div>
+				</div>
+			</div>
+			<div class="jp-volume-controls">
+				<button class="jp-mute" role="button" tabindex="0">mute</button>
+				<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+				<div class="jp-volume-bar">
+					<div class="jp-volume-bar-value"></div>
+				</div>
+			</div>
+			<div class="jp-time-holder">
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				<div class="jp-toggles">
+					<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+				</div>
+			</div>
+		</div>
+		<div class="jp-details">
+			<div class="jp-title" aria-label="title">&nbsp;</div>
+		</div>
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+          
         </div>
         <div class="col_12">
           <div class="col_7 background">
@@ -147,10 +206,10 @@
             <div id="jp_container_song" class="demo-container">
               <div style="overflow-y: scroll; height:480px;">
                 <br>
-                <input type="text" id="song_search"/>
-                <label for="song_search">Search for songs </label>
                 <br>
-              
+                <input type="text" id="song_search"/>
+                <label for="song_search">Search for songs </label> &nbsp; <a onclick="shuffleRows()" href="#">Shuffle</a>
+                <br>
                 <br>
                 <table id="song_list_table" class="default custom_table_1 font-color-1">
                   <tbody>
@@ -163,55 +222,20 @@
                     <tr>
                       <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree</a></td>
                     </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                     <tr >
+                      <td><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago 2</a></td>
                     </tr>
                     <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                      <td><a href="./mp3/12907629.mp3" author="xiong" img="./img/cinderella.jpg" class="track">Jasmine Flowers 2</a></td>
                     </tr>
                     <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
-                    </tr>
-                    <tr>
-                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">著名歌曲</a></td>
+                      <td><a href="./mp3/254817452.mp3" author="Orchard" img="./img/ariel.jpg" class="track">Hawkthorn Tree 2</a></td>
                     </tr>
                  </tbody>
                </table>
                <br>
                <br>
+               <!--  
                <div class="my_list">
                <ul>
                		<li>test1</li> 
@@ -220,6 +244,7 @@
                		<li>test4</li> 
                </ul>
                </div>
+               -->
             </div>
           </div>
         </div>

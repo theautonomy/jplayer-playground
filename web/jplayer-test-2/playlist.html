@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A list of songs to play</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="css/custom/playlist.css">
+    <script type="text/javascript" src="js/jPlayer-2.8.3/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jPlayer-2.8.3/dist/jplayer/jquery.jplayer.min.js"></script>
+	
+	
+    <script src="js/custom/jplayer-control.js"></script>
+
+    <script type="text/javascript">
+      //<![CDATA[
+
+      //]]>
+    </script>
+
+  </head>
+
+  <body>
+    <div id="jquery_jplayer_1"></div>
+
+    <div id="jp_container_1" class="demo-container">
+
+      <ul>
+        <li><a class="jp-play" href="#">Play</a></li>
+        <li><a class="jp-pause" href="#">Pause</a></li>
+        <li><a class="jp-stop" href="#">Stop</a></li>
+        <li> || </li>
+        <li><a class="" href="#">Volume: </a></li>
+        <li><a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+        <li> || </li>
+        <li><a class="" href="#">Position: </a></li>
+        <li><a class="jp-seek-bar" href="#">|&lt;----------&gt;|</a></li>
+        <li> || </li>
+        <li><a class="jp-repeat" href="#" title="repeat">Turn Repeat On</a></li>
+        <li><a class="jp-repeat-off" href="#" title="repeat off">Turn Repeat Off</a></li>
+       </ul>
+
+    </div>
+
+    <!-- -->
+    <!-- here is the place you would need to populate your list of songs -->
+    <!-- -->
+    <div id="jp_container_song" class="demo-container">
+      <ul>
+        <li><span>Select a song : </span></li>
+        <br>
+        <li> &nbsp; </li>
+        <li><a href="./mp3/7912388.mp3" author="malumiqi" class="track track-default">Long Long Ago</a></li>
+        <br>
+        <li> &nbsp; </li>
+        <li><a href="./mp3/12907629.mp3" author="malumiqi" class="track">Long Long Ago</a></li>
+        <br>
+        <li> &nbsp; </li>
+        <li><a href="http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3" class="track">Lismore</a></li>
+        <br>
+        <li> &nbsp; </li>
+        <li><a href="http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3" class="track">The Separation</a></li>
+        <br>
+      </ul>
+    </div>
+
+    <div id="jp_container_1" class="demo-container">
+       <p>
+        <span class="play-state"></span> :
+        <span class="track-name">nothing</span>
+        at <span class="extra-play-info"></span>
+        of <span class="jp-duration"></span>, which is
+        <span class="jp-current-time"></span>
+      </p>
+    </div>
+
+  </body>
+
+</html>

@@ -5,14 +5,16 @@ $(document).ready(function () {
         cssSelectorAncestor: "#jp_container_N"
     },
 
-    [],
+    [ ],
 
     {
         playlistOptions: {
             enableRemoveControls: true
         },
-        swfPath: "../../js",
+        swfPath: "../jPlayer-2.8.3/dist/jplayer",
         supplied: "webmv, ogv, m4v, oga, mp3",
+        useStateClassSkin: true,
+		autoBlur: false,
         smoothPlayBar: true,
         keyEnabled: true,
         audioFullScreen: true

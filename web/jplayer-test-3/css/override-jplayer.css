@@ -11,4 +11,8 @@
 	overflow-y: scroll; 
 	height:180px;
 }
-	
+
+div#jp_container_song	 {
+	padding: 0px 0px 0px 550px;
+}
+
